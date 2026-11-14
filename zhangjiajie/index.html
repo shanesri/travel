@@ -17,127 +17,168 @@
 .cal .h{background:none;border:0;color:var(--soft)}
 .cal .off{background:var(--accent-soft);border-color:var(--accent);font-weight:600}
 .cal .lv{background:#FBE9D7;border-color:#D58A3A}
+.cal .x{opacity:.35}
 .cal small{display:block;font-size:10px;color:var(--soft)}
+.route{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:14px;margin-top:18px}
+.route span{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px 12px}
+.route i{font-style:normal;color:var(--soft)}
+.feas{list-style:none;padding:0;margin:0}
+.feas li{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}
+.feas li:last-child{border-bottom:0}
+.feas small{display:block;color:var(--soft);font-size:14px}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:12px}
+.opts div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:14px}
+.opts .on{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent-soft)}
+.opts b{display:block;font-size:16px}
 </style>
 </head>
 <body>
 <nav class="top"><a class="brand" href="../">← Travel</a><span class="muted">2027 · ทริป 4/4</span></nav>
 <header class="hero">
   <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Zhangjiajie_National_Forest_Park_%E5%BC%A0%E5%AE%B6%E7%95%8C%E5%9B%BD%E5%AE%B6%E6%A3%AE%E6%9E%97%E5%85%AC%E5%9B%AD%2C_Hunan%2C_2023_%2852669865292%29.jpg/1920px-Zhangjiajie_National_Forest_Park_%E5%BC%A0%E5%AE%B6%E7%95%8C%E5%9B%BD%E5%AE%B6%E6%A3%AE%E6%9E%97%E5%85%AC%E5%9B%AD%2C_Hunan%2C_2023_%2852669865292%29.jpg" alt="เสาหินจางเจียเจี้ย">
-  <div class="wrap"><div class="kicker">Zhangjiajie + Fenghuang · 23 – 28 ต.ค. 2027</div><h1>Avatar Mountains</h1>
-  <p>เสาหินพันต้นในทะเลหมอก เดินเทียนเหมินซาน 999 ขั้น แล้วปิดทริปที่ไฟริมแม่น้ำเมืองโบราณเฟิ่งหวง — คร่อมวันปิยมหาราช</p></div>
+  <div class="wrap"><div class="kicker">Zhangjiajie · Furong · Fenghuang · ~21 – 27 ต.ค. 2027</div><h1>Avatar Mountains</h1>
+  <p>เสาหินพันต้นในทะเลหมอก บันไดสวรรค์ 999 ขั้น เมืองน้ำตก แล้วไปจบที่ไฟริมแม่น้ำเฟิ่งหวง — วนเป็นวงกลม ไม่ย้อนทางเดิม</p></div>
   <span class="credit">ภาพ: <a href="https://commons.wikimedia.org/wiki/File:Zhangjiajie_National_Forest_Park_张家界国家森林公园,_Hunan,_2023_(52669865292).jpg" target="_blank" rel="noopener">JL Cogburn · CC BY-SA 2.0</a></span>
 </header>
 <main class="wrap">
 <div class="stats">
-  <div><b>6 วัน</b><span>5 คืน · 3 ฐาน</span></div>
-  <div><b>~38k</b><span>บาท · สองคน (ประมาณ)</span></div>
-  <div><b>ลา 3 วัน</b><span>26–28 ต.ค.</span></div>
-  <div><b><span data-countdown="2027-10-23"></span></b><span>เริ่ม 23 ต.ค.</span></div>
+  <div><b>7 วัน</b><span>6 คืน · 5 ฐาน</span></div>
+  <div><b>~49k</b><span>บาท · สองคน (ประมาณ)</span></div>
+  <div><b>ลา 4 วัน</b><span>Option A</span></div>
+  <div><b><span data-countdown="2027-10-21"></span></b><span>เริ่ม ~21 ต.ค.</span></div>
 </div>
-<span class="draft">✎ ร่างแพลน · ตั๋วเครื่องบินยังไม่เปิดขาย · เวลารถไฟยังไม่ได้เช็ก</span>
+<span class="draft">✎ ร่างแพลน · ยังไม่ได้จองอะไร · ตั๋วเครื่องบินยังไม่เปิดขาย</span>
+<div class="route"><span>DMK</span><i>✈ 3 ชม.</i><span>ฉางซา</span><i>🚄 2 ชม.</i><span>อู่หลิงหยวน</span><i>🚗 45 น.</i><span>เมืองจางเจียเจี้ย</span><i>🚄 23 น.</i><span>ฝูหรงเจิ้น</span><i>🚄 35 น.</i><span>เฟิ่งหวง</span><i>🚄 2 ชม.</i><span>ฉางซา</span><i>✈</i><span>DMK</span></div>
 
-<h2>ทำไมวันนี้<small>ปลาย ต.ค. 2027: เลี่ยงวันหยุดชาติจีน 1–7 ต.ค. + ใบไม้เปลี่ยนสี + ได้หยุดชดเชยวันปิยมหาราช</small></h2>
+<h2>เลือกวัน<small>คร่อมเสาร์อาทิตย์ + วันหยุดพิเศษ · เลี่ยงวันหยุดชาติจีน 1–7 ต.ค.</small></h2>
+<div class="opts">
+  <div class="on"><b>⭐ A · 21–27 ต.ค.</b>7 วัน 6 คืน · ลา 4 วัน · ใบไม้เปลี่ยนสีพีค (โครงหลักของหน้านี้)</div>
+  <div><b>B · 22–27 ต.ค.</b>6 วัน 5 คืน · ลา 3 วัน · ตัดอุทยานเหลือ 1 วันครึ่ง</div>
+  <div><b>C · 13–18 ต.ค.</b>6 วัน 5 คืน · ลา 3 วัน · คร่อมวันนวมินทรมหาราช ใบไม้ยังไม่เปลี่ยน</div>
+</div>
 <div class="card">
   <div class="cal">
-    <div class="h">ส</div><div class="h">อา</div><div class="h">จ</div><div class="h">อ</div><div class="h">พ</div><div class="h">พฤ</div><div class="h">ศ</div>
-    <div class="off">23<small>หยุด</small></div><div class="off">24<small>หยุด</small></div><div class="off">25<small>ชดเชย</small></div><div class="lv">26<small>ลา</small></div><div class="lv">27<small>ลา</small></div><div class="lv">28<small>ลา</small></div><div>29</div>
+    <div class="h">พฤ</div><div class="h">ศ</div><div class="h">ส</div><div class="h">อา</div><div class="h">จ</div><div class="h">อ</div><div class="h">พ</div>
+    <div class="lv">21<small>ลา</small></div><div class="lv">22<small>ลา</small></div><div class="off">23<small>หยุด</small></div><div class="off">24<small>หยุด</small></div><div class="off">25<small>ชดเชย</small></div><div class="lv">26<small>ลา</small></div><div class="lv">27<small>ลา</small></div>
   </div>
-  <p class="muted" style="font-size:14px;margin:10px 0 0">วันปิยมหาราช 23 ต.ค. 2027 ตรงกับวันเสาร์ ปกติจะหยุดชดเชยวันจันทร์ 25 · รอเช็กกับประกาศวันหยุดราชการ 2570 ตอนออก · อีกวันหยุดเดือนนี้คือ 13 ต.ค. (พุธ) แต่เร็วไป ใบไม้ยังไม่เปลี่ยน</p>
+  <p class="muted" style="font-size:14px;margin:10px 0 0">วันปิยมหาราช 23 ต.ค. ตรงกับวันเสาร์ ปกติหยุดชดเชยจันทร์ 25 · รอเช็กประกาศวันหยุดราชการ 2570</p>
 </div>
+
+<h2>เช็กแล้ว: เดินทางทันจริงไหม<small>Claude ตรวจแพลนจาก Gemini แล้วแก้ในตารางรายวันให้แล้ว</small></h2>
+<div class="card"><ul class="feas"><li><span>✅</span><div><b>Day 1 ลงเครื่องแล้วไปถึงอู่หลิงหยวน</b><small>ทันจริง ถ้าจองรถไฟรอบ 15:00 ขึ้นไป (รอบ 14:40 ตึงเกิน)</small></div></li><li><span>⚠️</span><div><b>Day 2 ลำธารแส้ทอง</b><small>ลำธารยาว 7.5 กม. ปลายสุดอยู่ประตูใต้ ไกลจากลิฟต์ไป่หลง ให้เดินไป-กลับแค่ช่วงแรก</small></div></li><li><span>❌</span><div><b>Day 3 รวมหวงสือจ้าย</b><small>ไม่ทัน เพราะหวงสือจ้ายอยู่อีกฝั่งของอุทยาน แล้วยังต้องย้อนกลับมาเอากระเป๋าก่อนเข้าเมือง กูเลยตัดออก</small></div></li><li><span>⚠️</span><div><b>Day 4 รถไฟ 15:30 หลังลงเทียนเหมินซาน</b><small>ทันถ้าคิวไม่ยาว แต่เลื่อนเป็นรอบ 16:00–16:30 ปลอดภัยกว่า</small></div></li><li><span>✅</span><div><b>Day 5–6 ฝูหรงเจิ้น → เฟิ่งหวง → ฉางซา</b><small>มีรถไฟตรงทุกขา เฟิ่งหวงกู่เฉิง → ฉางซาใต้ ~2–2.5 ชม. · สถานีอยู่ห่างเมืองโบราณ ~10 กม.</small></div></li><li><span>✅</span><div><b>Day 7 บินเที่ยงจากฉางซา</b><small>นอนฉางซาคืนสุดท้าย ออกจากโรงแรม 9 โมงก็ทัน</small></div></li><li><span>⚠️</span><div><b>ราคาตั๋วเครื่องบิน</b><small>Gemini ประมาณ ~15,000 แต่ตอนกูลองค้นช่วงปลาย ก.ย. 2027 บินตรงไป-กลับ ~$962 สองคน (~32,000 บาท) เผื่องบไว้</small></div></li></ul></div>
+
 <div class="tools">
   <button class="btn" id="expand" type="button">ขยายทุกวัน</button>
   <button class="btn" id="field" type="button" aria-pressed="false">โหมดหน้างาน (ซ่อนรูป)</button>
-  <a class="btn" href="#eat">ของกิน</a><a class="btn" href="#copy">ต้องจองอะไร</a><a class="btn" href="#money">งบ</a>
+  <a class="btn" href="#stay">นอนที่ไหน</a><a class="btn" href="#eat">ของกิน</a><a class="btn" href="#copy">ต้องจองอะไร</a><a class="btn" href="#money">งบ</a>
 </div>
 
-<h2>รายวัน<small>แตะแต่ละวันดูตารางเต็ม · แตะชื่อจีนเพื่อก๊อป</small></h2>
+<h2>รายวัน<small>ตาม Option A · แตะแต่ละวันดูตารางเต็ม · แตะชื่อจีนเพื่อก๊อป</small></h2>
 <details class="day">
   <summary><img class="ph" loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Zhangjiajie_National_Forest_Park.jpg/1280px-Zhangjiajie_National_Forest_Park.jpg" alt="">
-    <div class="head"><div class="n">1</div><div><div class="date">เสาร์ 23 ต.ค. 2027</div><div class="place">บินเข้าหูหนาน → อู่หลิงหยวน</div><p class="gist">บินลงฉางซาหรือจางเจียเจี้ย ต่อรถไฟ/รถไปนอนหน้าประตูอุทยาน</p><p class="stay">🛏 โรงแรมแถวอู่หลิงหยวน <span class="zh">武陵源</span> (คืนที่ 1)</p></div><div class="chev">⌄</div></div>
+    <div class="head"><div class="n">1</div><div><div class="date">พฤหัส 21 ต.ค. 2027</div><div class="place">กรุงเทพ → ฉางซา → อู่หลิงหยวน</div><p class="gist">บินตรงฉางซา ต่อรถไฟความเร็วสูง 2 ชม. ไปนอนหน้าประตูอุทยาน</p><p class="stay">🛏 อู่หลิงหยวน (คืนที่ 1)</p></div><div class="chev">⌄</div></div>
   </summary>
   <p class="credit">ภาพ: <a href="https://commons.wikimedia.org/wiki/File:Zhangjiajie_National_Forest_Park.jpg" target="_blank" rel="noopener">Kuruman · CC BY 2.0</a> · Wikimedia Commons</p>
-  <div class="sched"><div class="row"><div class="t">เช้า (ไทย)</div><div class="what">บินกรุงเทพ → ฉางซา (CSX) หรือ จางเจียเจี้ย (DYG)<small>ตั๋วเดือน ต.ค. 2027 เปิดขายราว 4 ธ.ค. 2026 · ถ้าลงฉางซาต้องต่อรถไฟความเร็วสูงไปสถานีจางเจียเจี้ยตะวันตก <span class="zh">张家界西站</span></small></div></div><div class="row"><div class="t">บ่าย</div><div class="what">รถไปอู่หลิงหยวน <span class="zh">武陵源</span> ~40 นาที<small>นอนหน้าประตูอุทยาน พรุ่งนี้เข้าได้ตั้งแต่ 7 โมง</small></div></div><div class="row"><div class="t">ค่ำ</div><div class="what">กินสามซ่าโกว <span class="zh">三下锅</span> หม้อไฟจางเจียเจี้ย</div></div></div>
+  <div class="sched"><div class="row"><div class="t">07:50–12:10</div><div class="what">FD480 DMK → ฉางซา (CSX)<small>เวลาบินอ้างอิง ยังไม่เปิดขาย</small></div></div><div class="row"><div class="t">12:10–14:00</div><div class="what">ตม. → รถไฟแม่เหล็ก <span class="zh">磁浮快线</span> 19 นาที ไปสถานีฉางซาใต้ <span class="zh">长沙南</span><small>¥20/คน · เผื่อเวลาตรวจกระเป๋าเข้าสถานี</small></div></div><div class="row"><div class="t">~15:00–17:00</div><div class="what">รถไฟความเร็วสูง ฉางซาใต้ → จางเจียเจี้ยตะวันตก <span class="zh">张家界西</span> ~2 ชม.<small>¥167/คน · จองรอบ 15:00 ขึ้นไป เผื่อเครื่องดีเลย์</small></div></div><div class="row"><div class="t">17:00–17:45</div><div class="what">Didi ไปอู่หลิงหยวน <span class="zh">武陵源</span> ~35–40 นาที<small>~¥65</small></div></div><div class="row"><div class="t">19:00</div><div class="what">หม้อไฟสามซ่าโกว <span class="zh">三下锅</span> + เดินถนนซีปู้ <span class="zh">溪布街</span></div></div><p class="tip">Gemini วางรถไฟรอบ 14:40 ไว้ ทันแต่ตึง ถ้าเครื่องดีเลย์ครึ่งชั่วโมงอาจพลาด กูแนะนำให้เลื่อนเป็นรอบ 15:00–15:30</p></div>
+</details>
+<details class="day">
+  <summary><img class="ph" loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Stunning_rock_formations_in_Bailong_%28%E7%99%BD%E9%BE%99%EF%BC%89Yuanjiajie_%EF%BC%88%E8%A2%81%E5%AE%B6%E7%95%8C%EF%BC%89scenic_area.jpg/1280px-Stunning_rock_formations_in_Bailong_%28%E7%99%BD%E9%BE%99%EF%BC%89Yuanjiajie_%EF%BC%88%E8%A2%81%E5%AE%B6%E7%95%8C%EF%BC%89scenic_area.jpg" alt="">
+    <div class="head"><div class="n">2</div><div><div class="date">ศุกร์ 22 ต.ค. 2027</div><div class="place">ลำธารแส้ทอง + หยวนเจียเจี้ย + หยางเจียเจี้ย</div><p class="gist">วันศุกร์คนน้อยกว่าเสาร์อาทิตย์ จัดหนักอุทยานวันนี้</p><p class="stay">🛏 อู่หลิงหยวน (คืนที่ 2)</p></div><div class="chev">⌄</div></div>
+  </summary>
+  <p class="credit">ภาพ: <a href="https://commons.wikimedia.org/wiki/File:Stunning_rock_formations_in_Bailong_(白龙）Yuanjiajie_（袁家界）scenic_area.jpg" target="_blank" rel="noopener">Rocio Gil · CC BY-SA 4.0</a> · Wikimedia Commons</p>
+  <div class="sched"><div class="row"><div class="t">07:00</div><div class="what">เข้าประตูอู่หลิงหยวน <span class="zh">标志门</span> นั่ง Eco-bus ไปจุดสุ่ยเหรา <span class="zh">水绕四门</span><small>ตั๋วอุทยาน ~¥230 ใช้ได้ 4 วัน</small></div></div><div class="row"><div class="t">07:30–10:00</div><div class="what">เดินลำธารแส้ทอง <span class="zh">金鞭溪</span> แบบไป-กลับ<small>ลำธารยาว 7.5 กม. ปลายอีกด้านอยู่ประตูใต้ ไกลจากลิฟต์ เดินไปราว 1–1.5 ชม. แล้วย้อนกลับ</small></div></div><div class="row"><div class="t">10:15–13:30</div><div class="what">ลิฟต์ไป่หลง <span class="zh">百龙天梯</span> ขึ้นหยวนเจียเจี้ย <span class="zh">袁家界</span><small>¥65 · ภูเขาฮัลเลลูยา <span class="zh">乾坤柱</span> · สะพานใต้ฟ้า</small></div></div><div class="row"><div class="t">13:30–16:30</div><div class="what">หยางเจียเจี้ย <span class="zh">杨家界</span><small>กำแพงเมืองจีนธรรมชาติ <span class="zh">天然长城</span> · ไต่บันไดเหล็ก <span class="zh">一步登天</span></small></div></div><div class="row"><div class="t">16:30–17:30</div><div class="what">กระเช้าหยางเจียเจี้ยลง กลับที่พัก<small>¥76</small></div></div><p class="tip">ไปเดินลำธารตอนเช้าก่อน ค่อยขึ้นลิฟต์ตอนสาย เลี่ยงคิวกรุ๊ปทัวร์</p><a class="yt" href="https://www.youtube.com/watch?v=vBiUvAtr46g" target="_blank" rel="noopener"><div class="im"><img loading="lazy" src="https://i.ytimg.com/vi/vBiUvAtr46g/hqdefault.jpg" alt=""></div><div class="cap"><b>ภูเขาอวตารของจริง</b>ดูคลิปบน YouTube</div></a></div>
 </details>
 <details class="day">
   <summary><img class="ph" loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/1_tianzishan_wulingyuan_zhangjiajie_2012.jpg/1280px-1_tianzishan_wulingyuan_zhangjiajie_2012.jpg" alt="">
-    <div class="head"><div class="n">2</div><div><div class="date">อาทิตย์ 24 ต.ค. 2027</div><div class="place">อวตาร: หยวนเจียเจี้ย + เทียนจื่อซาน</div><p class="gist">ลิฟต์ไป่หลงขึ้นหน้าผา เดินเสาหินอวตาร แล้วข้ามไปภูเขาเทียนจื่อ</p><p class="stay">🛏 อู่หลิงหยวน (คืนที่ 2)</p></div><div class="chev">⌄</div></div>
+    <div class="head"><div class="n">3</div><div><div class="date">เสาร์ 23 ต.ค. 2027</div><div class="place">เทียนจื่อซาน + บันไดหมื่นขั้น → เข้าเมือง</div><p class="gist">ขึ้นกระเช้าเทียนจื่อ เดินลงเส้นทางโบราณไปหุบเขาภาพวาดสิบลี้ แล้วย้ายเข้าเมือง</p><p class="stay">🛏 เมืองจางเจียเจี้ย (คืนที่ 3)</p></div><div class="chev">⌄</div></div>
   </summary>
   <p class="credit">ภาพ: <a href="https://commons.wikimedia.org/wiki/File:1_tianzishan_wulingyuan_zhangjiajie_2012.jpg" target="_blank" rel="noopener">chensiyuan · CC BY-SA 4.0</a> · Wikimedia Commons</p>
-  <div class="sched"><div class="row"><div class="t">07:00</div><div class="what">เข้าประตูอุทยาน ขึ้นรถบัสอุทยาน<small>ตั๋ว ¥239 ใช้ได้ 4 วันติด · ต้องจองรอบเข้าล่วงหน้าทุกวัน</small></div></div><div class="row"><div class="t">07:30</div><div class="what">ลิฟต์ไป่หลง <span class="zh">百龙天梯</span> ขึ้นหน้าผา 326 ม.<small>¥65 ขาเดียว · ไปเช้าก่อนคิวยาว</small></div></div><div class="row"><div class="t">08:00–12:00</div><div class="what">หยวนเจียเจี้ย <span class="zh">袁家界</span><small>ภูเขาฮัลเลลูยา (ต้นแบบอวตาร) · สะพานธรรมชาติแห่งแรกใต้หล้า</small></div></div><div class="row"><div class="t">13:00–16:00</div><div class="what">ภูเขาเทียนจื่อ <span class="zh">天子山</span><small>วิวทะเลเสาหิน · ไปด้วยรถบัสอุทยาน</small></div></div><div class="row"><div class="t">16:00</div><div class="what">กระเช้าเทียนจื่อลง <span class="zh">天子山索道</span><small>¥72 ขาเดียว</small></div></div><p class="tip">ใบไม้เริ่มเปลี่ยนสีปลาย ต.ค. · ช่วงหลังวันหยุดชาติจีน (1–7 ต.ค.) คนน้อยกว่าเยอะ</p><a class="yt" href="https://www.youtube.com/watch?v=vBiUvAtr46g" target="_blank" rel="noopener"><div class="im"><img loading="lazy" src="https://i.ytimg.com/vi/vBiUvAtr46g/hqdefault.jpg" alt=""></div><div class="cap"><b>ภูเขาอวตารของจริง</b>ดูคลิปบน YouTube</div></a></div>
+  <div class="sched"><div class="row"><div class="t">07:30</div><div class="what">เช็กเอาต์ ฝากกระเป๋า เข้าอุทยาน</div></div><div class="row"><div class="t">08:00–10:30</div><div class="what">กระเช้าเทียนจื่อซาน <span class="zh">天子山索道</span> ขึ้นยอด<small>¥72 · ยอดเขาพู่กันจักรพรรดิ <span class="zh">御笔峰</span> · สวนเฮ่อหลง · ไปให้ทันรอบแรก วันเสาร์คิวยาว</small></div></div><div class="row"><div class="t">10:30–13:00</div><div class="what">เดินลงบันไดหมื่นขั้น <span class="zh">卧龙岭</span> ถึงหุบเขาภาพวาดสิบลี้ <span class="zh">十里画廊</span><small>ไฮไลต์สายเดิน · ลงเขาทั้งหมด ถนอมเข่า</small></div></div><div class="row"><div class="t">13:30–15:00</div><div class="what">ข้าวเที่ยง กลับไปเอากระเป๋าที่โรงแรม</div></div><div class="row"><div class="t">15:00–16:00</div><div class="what">Didi เข้าเมืองจางเจียเจี้ย ~45 นาที<small>~¥70</small></div></div><div class="row"><div class="t">ค่ำ</div><div class="what">ตึกมหัศจรรย์ 72 ชั้น <span class="zh">七十二奇楼</span> ไฟกลางคืน</div></div><p class="tip">Gemini ใส่หวงสือจ้าย <span class="zh">黄石寨</span> ไว้วันนี้ด้วย แต่อยู่อีกฝั่งของอุทยาน นั่งรถไกล แล้วยังต้องย้อนกลับมาเอากระเป๋าก่อนเข้าเมือง ไม่ทันจริง กูเลยตัดออก ถ้าอยากไปจริงต้องเอาไปไว้ Day 2 แทนหยางเจียเจี้ย</p></div>
 </details>
 <details class="day">
-  <summary><img class="ph" loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Zhangjiajie_National_Forest_Park_%E5%BC%A0%E5%AE%B6%E7%95%8C%E5%9B%BD%E5%AE%B6%E6%A3%AE%E6%9E%97%E5%85%AC%E5%9B%AD%2C_Hunan%2C_2023_%2852669865292%29.jpg/1280px-Zhangjiajie_National_Forest_Park_%E5%BC%A0%E5%AE%B6%E7%95%8C%E5%9B%BD%E5%AE%B6%E6%A3%AE%E6%9E%97%E5%85%AC%E5%9B%AD%2C_Hunan%2C_2023_%2852669865292%29.jpg" alt="">
-    <div class="head"><div class="n">3</div><div><div class="date">จันทร์ 25 ต.ค. 2027</div><div class="place">ลำธารแส้ทอง + หยางเจียเจี้ย</div><p class="gist">เดินเลียบลำธารในหุบเขาเสาหิน ลิงป่าเยอะ เดินสบายทั้งวัน</p><p class="stay">🛏 อู่หลิงหยวน (คืนที่ 3)</p></div><div class="chev">⌄</div></div>
+  <summary><img class="ph" loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Tianmen_38258-Zhangjiajie_%2849047523437%29.jpg/1280px-Tianmen_38258-Zhangjiajie_%2849047523437%29.jpg" alt="">
+    <div class="head"><div class="n">4</div><div><div class="date">อาทิตย์ 24 ต.ค. 2027</div><div class="place">เทียนเหมินซาน → เมืองน้ำตกฝูหรงเจิ้น</div><p class="gist">บันไดสวรรค์ 999 ขั้น ถ้ำประตูสวรรค์ ทางเดินกระจก แล้วรถไฟ 23 นาทีไปนอนเมืองน้ำตก</p><p class="stay">🛏 ฝูหรงเจิ้น (คืนที่ 4)</p></div><div class="chev">⌄</div></div>
   </summary>
-  <p class="credit">ภาพ: <a href="https://commons.wikimedia.org/wiki/File:Zhangjiajie_National_Forest_Park_张家界国家森林公园,_Hunan,_2023_(52669865292).jpg" target="_blank" rel="noopener">JL Cogburn · CC BY-SA 2.0</a> · Wikimedia Commons</p>
-  <div class="sched"><div class="row"><div class="t">08:00–12:00</div><div class="what">ลำธารแส้ทอง <span class="zh">金鞭溪</span> ~7.5 กม.<small>ทางเรียบ เดินเลียบน้ำ เงยหน้าเห็นเสาหินตลอด · ระวังลิงแย่งของ</small></div></div><div class="row"><div class="t">13:00–17:00</div><div class="what">หยางเจียเจี้ย <span class="zh">杨家界</span><small>คนน้อยกว่าหยวนเจียเจี้ย · กระเช้า ¥76</small></div></div><div class="row"><div class="t">ค่ำ</div><div class="what">ข้าวเย็นในเมืองอู่หลิงหยวน</div></div><p class="tip">วันนี้เป็นวันหยุดชดเชยวันปิยมหาราชของไทย ไม่ต้องลา</p></div>
+  <p class="credit">ภาพ: <a href="https://commons.wikimedia.org/wiki/File:Tianmen_38258-Zhangjiajie_(49047523437).jpg" target="_blank" rel="noopener">xiquinhosilva · CC BY 2.0</a> · Wikimedia Commons</p>
+  <div class="sched"><div class="row"><div class="t">07:30–13:30</div><div class="what">เทียนเหมินซาน <span class="zh">天门山</span><small>¥288 จองล่วงหน้า · ถ้ากระเช้าหลัก (Line A/B) ยังปิด ใช้ Line C: รถบัส → กระเช้าด่วน → บันได 999 ขั้น → บันไดเลื่อนขึ้นยอด → ทางเดินกระจก <span class="zh">鬼谷栈道</span></small></div></div><div class="row"><div class="t">13:30–15:00</div><div class="what">ลงเขา ข้าวเที่ยง เอากระเป๋า Didi ไปสถานีจางเจียเจี้ยตะวันตก 15 นาที</div></div><div class="row"><div class="t">~16:00</div><div class="what">รถไฟความเร็วสูง → ฝูหรงเจิ้น <span class="zh">芙蓉镇</span> 23 นาที<small>¥27/คน</small></div></div><div class="row"><div class="t">17:00–22:00</div><div class="what">เมืองโบราณฝูหรงเจิ้น ตั๋ว ¥108<small>เดินลอดหลังม่านน้ำตก 60 ม. · ไฟเปิดทั้งหน้าผาราว 19:30</small></div></div><p class="tip">Gemini วางรถไฟไว้ 15:30 ถ้าเทียนเหมินซานคิวยาวจะตึงมาก กูแนะนำรอบ 16:00–16:30</p><a class="yt" href="https://www.youtube.com/watch?v=aLrRn1J3ty8" target="_blank" rel="noopener"><div class="im"><img loading="lazy" src="https://i.ytimg.com/vi/aLrRn1J3ty8/hqdefault.jpg" alt=""></div><div class="cap"><b>ทางเดินกระจกเทียนเหมินซาน</b>ดูคลิปบน YouTube</div></a></div>
 </details>
 <details class="day">
-  <summary><img class="ph" loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Zhangjiajie_National_Forest_Park_%E5%BC%A0%E5%AE%B6%E7%95%8C%E5%9B%BD%E5%AE%B6%E6%A3%AE%E6%9E%97%E5%85%AC%E5%9B%AD%2C_Hunan%2C_2023_%2852669865292%29.jpg/1280px-Zhangjiajie_National_Forest_Park_%E5%BC%A0%E5%AE%B6%E7%95%8C%E5%9B%BD%E5%AE%B6%E6%A3%AE%E6%9E%97%E5%85%AC%E5%9B%AD%2C_Hunan%2C_2023_%2852669865292%29.jpg" alt="">
-    <div class="head"><div class="n">4</div><div><div class="date">อังคาร 26 ต.ค. 2027</div><div class="place">เทียนเหมินซาน</div><p class="gist">กระเช้ายาวที่สุดในโลก ทางเดินกระจกริมผา ประตูสวรรค์ 999 ขั้น</p><p class="stay">🛏 โรงแรมในเมืองจางเจียเจี้ย (คืนที่ 4)</p></div><div class="chev">⌄</div></div>
+  <summary><img class="ph" loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/1_furong_panorama_2012.jpg/1280px-1_furong_panorama_2012.jpg" alt="">
+    <div class="head"><div class="n">5</div><div><div class="date">จันทร์ 25 ต.ค. 2027</div><div class="place">ฝูหรงเจิ้นยามเช้า → เฟิ่งหวง</div><p class="gist">เดินเมืองน้ำตกตอนเช้าไม่มีทัวร์ แล้วรถไฟ 35 นาทีไปเมืองโบราณริมแม่น้ำ</p><p class="stay">🛏 เฟิ่งหวง (คืนที่ 5)</p></div><div class="chev">⌄</div></div>
   </summary>
-  <p class="credit">ภาพ: <a href="https://commons.wikimedia.org/wiki/File:Zhangjiajie_National_Forest_Park_张家界国家森林公园,_Hunan,_2023_(52669865292).jpg" target="_blank" rel="noopener">JL Cogburn · CC BY-SA 2.0</a> · Wikimedia Commons</p>
-  <div class="sched"><div class="row"><div class="t">07:00</div><div class="what">ย้ายเข้าเมืองจางเจียเจี้ย ~1 ชม. ฝากกระเป๋า</div></div><div class="row"><div class="t">08:00–16:00</div><div class="what">เทียนเหมินซาน <span class="zh">天门山</span><small>ตั๋ว ¥288 จองล่วงหน้า · กระเช้าจากกลางเมือง · ทางเดินกระจก · ถนน 99 โค้ง · ประตูสวรรค์ 999 ขั้น</small></div></div><div class="row"><div class="t">ค่ำ</div><div class="what">ข้าวเย็นในเมือง</div></div><p class="tip">ตั๋วเทียนเหมินซานรอบเช้าหมดเร็ว · ปลายปี 2025 กระเช้าช่วงบนปิดซ่อม ต้องเช็กก่อนจอง</p><a class="yt" href="https://www.youtube.com/watch?v=aLrRn1J3ty8" target="_blank" rel="noopener"><div class="im"><img loading="lazy" src="https://i.ytimg.com/vi/aLrRn1J3ty8/hqdefault.jpg" alt=""></div><div class="cap"><b>ทางเดินกระจกเทียนเหมินซาน</b>ดูคลิปบน YouTube</div></a></div>
+  <p class="credit">ภาพ: <a href="https://commons.wikimedia.org/wiki/File:1_furong_panorama_2012.jpg" target="_blank" rel="noopener">chensiyuan · CC BY-SA 4.0</a> · Wikimedia Commons</p>
+  <div class="sched"><div class="row"><div class="t">07:30–11:00</div><div class="what">ฝูหรงเจิ้นตอนเช้า หมอกเหนือน้ำตก ถนนหินห้าลี้ <span class="zh">五里石板街</span><small>กินเต้าหู้ข้าว <span class="zh">米豆腐</span></small></div></div><div class="row"><div class="t">~12:30–13:05</div><div class="what">รถไฟ ฝูหรงเจิ้น → เฟิ่งหวงกู่เฉิง <span class="zh">凤凰古城站</span><small>¥50/คน</small></div></div><div class="row"><div class="t">13:15–14:00</div><div class="what">สถานี → เมืองโบราณ ~10 กม.<small>รถไฟแม่เหล็ก ¥48 (09:00–21:00) · รถบัส ¥7 · แท็กซี่ ~¥25 · ในเมืองโบราณเรียก Didi ไม่ได้</small></div></div><div class="row"><div class="t">14:30–22:30</div><div class="what">เดินเมืองโบราณ <span class="zh">凤凰古城</span><small>สะพานหินกลางแม่น้ำถัว <span class="zh">沱江</span> · บ้านไม้ยกเสา <span class="zh">吊脚楼</span> · ไฟสะพานหงเฉียว <span class="zh">虹桥</span></small></div></div><p class="tip">วันหยุดชดเชยวันปิยมหาราช · ค่ารถไฟแม่เหล็กเข้าเมืองจริงคือ ¥48 ไม่ใช่ ¥28 ตามที่ Gemini บอก</p></div>
 </details>
 <details class="day">
   <summary><img class="ph" loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Tuo_River_in_Fenghuang_County%2C_Hunan%2C_China3.jpg/1280px-Tuo_River_in_Fenghuang_County%2C_Hunan%2C_China3.jpg" alt="">
-    <div class="head"><div class="n">5</div><div><div class="date">พุธ 27 ต.ค. 2027</div><div class="place">เมืองโบราณเฟิ่งหวง</div><p class="gist">รถไฟไปเฟิ่งหวง บ้านไม้ยกเสาริมแม่น้ำ ไฟสวยตอนกลางคืน</p><p class="stay">🛏 โรงแรมริมแม่น้ำในเฟิ่งหวง (คืนที่ 5)</p></div><div class="chev">⌄</div></div>
+    <div class="head"><div class="n">6</div><div><div class="date">อังคาร 26 ต.ค. 2027</div><div class="place">เฟิ่งหวงสโลว์ไลฟ์ → ฉางซา</div><p class="gist">ตื่นเช้าดูหมอกบนแม่น้ำ เดินช้าๆ ทั้งวัน เย็นรถไฟตรงกลับฉางซา</p><p class="stay">🛏 ฉางซา (คืนที่ 6)</p></div><div class="chev">⌄</div></div>
   </summary>
   <p class="credit">ภาพ: <a href="https://commons.wikimedia.org/wiki/File:Tuo_River_in_Fenghuang_County,_Hunan,_China3.jpg" target="_blank" rel="noopener">Huangdan2060 · CC0</a> · Wikimedia Commons</p>
-  <div class="sched"><div class="row"><div class="t">เช้า</div><div class="what">รถไฟความเร็วสูง จางเจียเจี้ยตะวันตก → เฟิ่งหวงกู่เฉิง <span class="zh">凤凰古城站</span><small>เช็กเวลารถไฟตอนจอง</small></div></div><div class="row"><div class="t">บ่าย</div><div class="what">เดินเมืองโบราณ ข้ามสะพานหินกลางแม่น้ำถัว <span class="zh">沱江</span><small>ล่องเรือแม่น้ำได้</small></div></div><div class="row"><div class="t">ค่ำ</div><div class="what">ไฟริมแม่น้ำ เป็ดเลือดข้าว <span class="zh">血粑鸭</span> · ลูกอมขิง <span class="zh">姜糖</span></div></div><a class="yt" href="https://www.youtube.com/watch?v=MuY1NPVcUn4" target="_blank" rel="noopener"><div class="im"><img loading="lazy" src="https://i.ytimg.com/vi/MuY1NPVcUn4/hqdefault.jpg" alt=""></div><div class="cap"><b>จางเจียเจี้ย + เฟิ่งหวง</b>ดูคลิปบน YouTube</div></a></div>
+  <div class="sched"><div class="row"><div class="t">07:00–09:00</div><div class="what">หมอกเหนือแม่น้ำถัว คนยังน้อย</div></div><div class="row"><div class="t">09:00–15:00</div><div class="what">สะพานหนานหัว <span class="zh">南华大桥</span> ชมวิวหลังคาเมือง · ล่องเรือ · เดินตรอก</div></div><div class="row"><div class="t">15:45</div><div class="what">ออกจากเมืองโบราณไปสถานี<small>เผื่อเวลา 40 นาที</small></div></div><div class="row"><div class="t">~17:00–19:15</div><div class="what">รถไฟตรง เฟิ่งหวงกู่เฉิง → ฉางซาใต้ ~2–2.5 ชม.<small>¥195/คน</small></div></div><div class="row"><div class="t">19:30–22:30</div><div class="what">Metro เข้าอู่อีกวั่งฉ่าง <span class="zh">五一广场</span> ลุยสตรีทฟู้ด<small>ถนน <span class="zh">黄兴路步行街</span> · <span class="zh">坡子街</span> · ตึก <span class="zh">文和友</span></small></div></div></div>
 </details>
 <details class="day">
-  <summary><img class="ph" loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Fenghuang_banner_Ancient_Town_river_crossing.jpg/1920px-Fenghuang_banner_Ancient_Town_river_crossing.jpg" alt="">
-    <div class="head"><div class="n">6</div><div><div class="date">พฤหัส 28 ต.ค. 2027</div><div class="place">เช้าเฟิ่งหวง → บินกลับ</div><p class="gist">เดินเมืองตอนเช้าก่อนคนเยอะ แล้วรถไฟไปสนามบิน</p><p class="stay">🛏 ✈ บินกลับไทย</p></div><div class="chev">⌄</div></div>
+  <summary><img class="ph" loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Changsha_Stinky_Tofu.jpg/1280px-Changsha_Stinky_Tofu.jpg" alt="">
+    <div class="head"><div class="n">7</div><div><div class="date">พุธ 27 ต.ค. 2027</div><div class="place">ฉางซา → บินกลับ</div><p class="gist">ก๋วยเตี๋ยวฉางซามื้อเช้า แล้ว Metro ไปสนามบิน</p><p class="stay">🛏 ✈ กลับบ้าน</p></div><div class="chev">⌄</div></div>
   </summary>
-  <p class="credit">ภาพ: <a href="https://commons.wikimedia.org/wiki/File:Fenghuang_banner_Ancient_Town_river_crossing.jpg" target="_blank" rel="noopener">Chensiyuan · CC BY-SA 4.0</a> · Wikimedia Commons</p>
-  <div class="sched"><div class="row"><div class="t">06:30–09:00</div><div class="what">เฟิ่งหวงตอนเช้า หมอกบนแม่น้ำ คนน้อย</div></div><div class="row"><div class="t">สาย</div><div class="what">รถไฟกลับฉางซาหรือจางเจียเจี้ย<small>ขึ้นกับว่าบินกลับจากสนามบินไหน</small></div></div><div class="row"><div class="t">บ่าย–ค่ำ</div><div class="what">บินกลับกรุงเทพ</div></div></div>
+  <p class="credit">ภาพ: <a href="https://commons.wikimedia.org/wiki/File:Changsha_Stinky_Tofu.jpg" target="_blank" rel="noopener">Lennartbj · CC BY-SA 4.0</a> · Wikimedia Commons</p>
+  <div class="sched"><div class="row"><div class="t">08:00</div><div class="what">ก๋วยเตี๋ยวฉางซา <span class="zh">长沙米粉</span> เช็กเอาต์</div></div><div class="row"><div class="t">09:15–10:15</div><div class="what">Metro ไปสนามบินหวงฮวา (CSX)<small>~1 ชม.</small></div></div><div class="row"><div class="t">12:55–15:10</div><div class="what">FD481 ฉางซา → DMK</div></div></div>
 </details>
 
 
-<h2 id="eat">ของกิน<small>อาหารชาวถู่เจีย <span class="zh">土家</span> กับชาวเหมียว <span class="zh">苗</span> · เผ็ดเปรี้ยว รมควัน</small></h2>
-<div class="card"><ul class="dish">
-  <li><b>สามซ่าโกว</b> <span class="zh">三下锅</span> — หม้อไฟแห้งจางเจียเจี้ย หมูรมควัน เครื่องใน ผักดอง ผัดรวมในหม้อเดียว</li>
-  <li><b>หมูรมควันถู่เจีย</b> <span class="zh">土家腊肉</span> — ผัดพริกหรือนึ่ง ของขึ้นชื่อทั้งภูมิภาค</li>
-  <li><b>ปลาเปรี้ยว</b> <span class="zh">酸鱼</span> / <b>เนื้อเปรี้ยว</b> <span class="zh">酸肉</span> — หมักแบบชาวเหมียว</li>
-  <li><b>เต้าหู้ข้าว</b> <span class="zh">米豆腐</span> — ของกินเล่นเย็นๆ ราดน้ำพริก</li>
-  <li><b>เป็ดเลือดข้าว</b> <span class="zh">血粑鸭</span> — จานเด็ดเฟิ่งหวง</li>
-  <li><b>ลูกอมขิง</b> <span class="zh">姜糖</span> — ดูร้านดึงขิงสดๆ ในเฟิ่งหวง ซื้อเป็นของฝาก</li>
-</ul></div>
-
-<h2>ไฟลต์<small>ยังไม่เปิดขาย (ราว 4 ธ.ค. 2026)</small></h2>
-<div class="card">
-  <p style="margin:0">สองทางให้เลือก:</p>
-  <ul class="dish">
-    <li><b>บินตรงจางเจียเจี้ย (DYG)</b> — ใกล้สุด ถ้ามีเที่ยวบินช่วงนั้น</li>
-    <li><b>บินฉางซา (CSX)</b> แล้วต่อรถไฟความเร็วสูงไปจางเจียเจี้ยตะวันตก — มีไฟลต์ให้เลือกเยอะกว่า</li>
-    <li>ขากลับดูว่าบินจากที่ไหนสะดวกกับเฟิ่งหวงที่สุด ไม่จำเป็นต้องกลับที่เดิม</li>
-  </ul>
-</div>
-
-<h2>ที่พัก</h2>
+<h2 id="stay">นอนที่ไหน<small>เน้นเดินทางสะดวก ใกล้ของกินกลางคืน เดินเล่นได้ · ห้องปลอดบุหรี่ · งบ ~1,300–1,600/คืน</small></h2>
 <div class="card scroll"><table>
-  <thead><tr><th>คืน</th><th>โซน</th><th>ทำไม</th></tr></thead>
+  <thead><tr><th>คืน</th><th>โซน</th><th>ทำไมตรงนี้</th></tr></thead>
   <tbody>
-    <tr><td>23–26 ต.ค.<span class="sub">3 คืน</span></td><td>อู่หลิงหยวน <span class="zh">武陵源</span></td><td>หน้าประตูอุทยาน เข้าเช้าได้ทุกวัน</td></tr>
-    <tr><td>26–27 ต.ค.<span class="sub">1 คืน</span></td><td>เมืองจางเจียเจี้ย <span class="zh">张家界市区</span></td><td>ใกล้สถานีกระเช้าเทียนเหมินซานกับสถานีรถไฟ</td></tr>
-    <tr><td>27–28 ต.ค.<span class="sub">1 คืน</span></td><td>เฟิ่งหวง <span class="zh">凤凰古城</span></td><td>เลือกห้องริมแม่น้ำ เห็นไฟตอนกลางคืน</td></tr>
+    <tr><td>21–23 ต.ค.<span class="sub">2 คืน</span></td><td>อู่หลิงหยวน · ใกล้ประตู <span class="zh">标志门</span> / ถนน <span class="zh">溪布街</span></td><td>เดินเข้าประตูอุทยานได้ตอนเช้า · ถนนซีปู้มีร้านกินกับไฟกลางคืน เดินจากที่พักได้</td></tr>
+    <tr><td>23–24 ต.ค.<span class="sub">1 คืน</span></td><td>เมืองจางเจียเจี้ย · ใกล้สถานีกระเช้าเทียนเหมินซาน</td><td>เช้าเดินไปขึ้นเขาได้เลย · ใกล้ตึก 72 ชั้น <span class="zh">七十二奇楼</span> โซนกินเที่ยวกลางคืน · ไปสถานีรถไฟ 15 นาที</td></tr>
+    <tr><td>24–25 ต.ค.<span class="sub">1 คืน</span></td><td>ฝูหรงเจิ้น · หน้าทางเข้าเมืองโบราณ</td><td>เดินไปดูไฟน้ำตกตอนค่ำ แล้วออกเดินเมืองตอนเช้าก่อนทัวร์มาได้ · เลือกตึกใหม่ ไม่เอาบ้านไม้เก่ากลิ่นอับ</td></tr>
+    <tr><td>25–26 ต.ค.<span class="sub">1 คืน</span></td><td>เฟิ่งหวง · ในเมืองโบราณแถวสะพานหงเฉียว <span class="zh">虹桥</span></td><td>ออกมาเดินดูไฟกับหมอกเช้าได้ทันที · เลี่ยงห้องติดถนนบาร์ริมน้ำ เสียงดังถึงดึก · รถเข้าเมืองโบราณไม่ได้ ต้องลากกระเป๋า</td></tr>
+    <tr><td>26–27 ต.ค.<span class="sub">1 คืน</span></td><td>ฉางซา · อู่อีกวั่งฉ่าง <span class="zh">五一广场</span></td><td>ใจกลางสตรีทฟู้ด <span class="zh">坡子街</span> <span class="zh">黄兴路</span> <span class="zh">文和友</span> · Metro ไปสถานีรถไฟและสนามบินสะดวก</td></tr>
   </tbody>
 </table></div>
 
+<h2 id="eat">ของกิน<small>แตะชื่อจีนเพื่อก๊อปไปยื่นให้ร้าน</small></h2>
+<figure style="margin:14px 0 0"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Changsha_Stinky_Tofu.jpg/1280px-Changsha_Stinky_Tofu.jpg" alt="เต้าหู้เหม็นฉางซา" style="border-radius:16px;aspect-ratio:16/9;object-fit:cover;width:100%"><figcaption class="credit" style="margin-top:6px">เต้าหู้เหม็นฉางซา · ภาพ: <a href="https://commons.wikimedia.org/wiki/File:Changsha_Stinky_Tofu.jpg" target="_blank" rel="noopener">Lennartbj · CC BY-SA 4.0</a></figcaption></figure>
+<section class="city"><h3>จางเจียเจี้ย · อู่หลิงหยวน</h3><ul class="dish">
+  <li>หม้อไฟสามซ่าโกว <span class="zh">三下锅</span> — หมูรมควัน เนื้อ เครื่องใน ผัดแห้งพริกหูหนาน · ร้าน <span class="zh">胡师傅三下锅</span> / <span class="zh">富正毅三下锅</span></li>
+  <li>หมูรมควันถู่เจีย <span class="zh">土家腊肉</span> · ซุปไก่ตุ๋นเห็ดหูหนูหิน <span class="zh">岩耳炖土鸡</span></li>
+  <li>ขนมหญ้าสมุนไพรทอด <span class="zh">蒿子粑粑</span></li>
+</ul></section>
+<section class="city"><h3>ฝูหรงเจิ้น</h3><ul class="dish">
+  <li>เต้าหู้ข้าวหลิวเสี่ยวชิ่ง <span class="zh">刘晓庆米豆腐</span> — ร้านต้นตำรับเลขที่ 113</li>
+  <li>หม้อไฟปลาแม่น้ำ <span class="zh">土家桂鱼火锅</span> · ข้าวเหนียวปิ้ง <span class="zh">烤糍粑</span></li>
+</ul></section>
+<section class="city"><h3>เฟิ่งหวง</h3><ul class="dish">
+  <li>ปลาต้มซุปเปรี้ยวชาวเหมียว <span class="zh">苗家酸汤鱼</span></li>
+  <li>เป็ดเลือดข้าว <span class="zh">血粑鸭</span> — ร้าน <span class="zh">俊子饭店</span> / <span class="zh">万寿宫饭店</span></li>
+  <li>ลูกอมขิง <span class="zh">姜糖</span> ของฝาก</li>
+</ul></section>
+<section class="city"><h3>ฉางซา</h3><ul class="dish">
+  <li>เต้าหู้เหม็นฉางซา <span class="zh">长沙臭豆腐</span> — ร้าน <span class="zh">黑色经典</span></li>
+  <li>หมูผัดพริกหยวกหูหนาน <span class="zh">辣椒炒肉</span> — ร้าน <span class="zh">费大厨辣椒炒肉</span></li>
+  <li>กุ้งเครย์ฟิชผัดพริก <span class="zh">口味虾</span> — ตึก <span class="zh">文和友</span></li>
+  <li>ชา <span class="zh">茶颜悦色</span> สั่ง <span class="zh">幽兰拿铁</span> · ก๋วยเตี๋ยวฉางซา <span class="zh">长沙米粉</span> มื้อเช้า</li>
+</ul></section>
+
+<h2>ไฟลต์<small>ยังไม่เปิดขาย · เวลาบินอ้างอิงจากช่วง ก.ย. 2027</small></h2>
+<div class="card">
+  <div class="muted" style="font-size:14px">Thai AirAsia บินตรง · ไม่มีบินตรงไปจางเจียเจี้ย (DYG) ต่อเครื่องไป DYG แพงกว่าและใช้เวลานานกว่า</div>
+  <div class="leg"><div><div class="c">DMK</div>07:50</div><div class="m">FD480<br>~21 ต.ค. · 3 ชม. 20 น.</div><div class="rt"><div class="c">CSX</div>12:10</div></div>
+  <div class="leg"><div><div class="c">CSX</div>12:55</div><div class="m">FD481<br>~27 ต.ค. · 3 ชม. 15 น.</div><div class="rt"><div class="c">DMK</div>15:10</div></div>
+</div>
+
 <h2 id="copy">สิ่งที่ต้องจอง & เตรียม<small>ติ๊กได้ (จำไว้ในเครื่องตัวเอง)</small></h2>
-<div class="card" id="checklist"><h3 class="bk">ตอนนี้</h3><ul class="check"><li><input type="checkbox" id="b1"><label for="b1"><b>ลางาน 26–28 ต.ค. (3 วัน)</b> <span class="due">ตอนนี้</span><small>23–24 เสาร์อาทิตย์ · 25 หยุดชดเชยวันปิยมหาราช (ต้องรอประกาศปฏิทินวันหยุด 2570 อย่างเป็นทางการ)</small></label></li><li><input type="checkbox" id="b2"><label for="b2"><b>ตั้งเตือนราคาตั๋วเครื่องบิน</b> <span class="due">ตอนนี้</span><small>ตั๋วเดือน ต.ค. 2027 เปิดขายราว 4 ธ.ค. 2026 · ดูทั้งลงฉางซา (CSX) และจางเจียเจี้ย (DYG)</small></label></li></ul><h3 class="bk">2–3 เดือนก่อน</h3><ul class="check"><li><input type="checkbox" id="b3"><label for="b3"><b>ตั๋วเครื่องบิน</b> <span class="due">ส.ค.–ก.ย. 2027</span><small></small></label></li><li><input type="checkbox" id="b4"><label for="b4"><b>ที่พัก 5 คืน</b> <span class="due">ส.ค.–ก.ย. 2027</span><small>อู่หลิงหยวน 3 คืน · เมืองจางเจียเจี้ย 1 คืน · เฟิ่งหวง 1 คืน (เลือกริมแม่น้ำ)</small></label></li></ul><h3 class="bk">2–4 สัปดาห์ก่อน</h3><ul class="check"><li><input type="checkbox" id="b5"><label for="b5"><b>ตั๋วรถไฟความเร็วสูง</b> <span class="due">เปิดขาย 15 วันก่อน</span><small>ฉางซา → จางเจียเจี้ยตะวันตก (ถ้าลงฉางซา) · จางเจียเจี้ย → เฟิ่งหวง · เฟิ่งหวง → สนามบินขากลับ · ตั้งจองล่วงหน้าใน Trip.com</small></label></li><li><input type="checkbox" id="b6"><label for="b6"><b>ตั๋วอุทยานจางเจียเจี้ย + จองรอบเข้า</b> <span class="due">1–2 สัปดาห์ก่อน</span><small>¥239 ใช้ได้ 4 วัน ต้องจองรอบเข้าทุกวัน · ลิฟต์ไป่หลง ¥65 · กระเช้าเทียนจื่อ ¥72</small></label></li><li><input type="checkbox" id="b7"><label for="b7"><b>ตั๋วเทียนเหมินซาน</b> <span class="due">1–2 สัปดาห์ก่อน</span><small>¥288 · รอบเช้าหมดเร็ว · Line C ยกเลิกฟรีก่อนวันเข้า</small></label></li></ul><h3 class="bk">ของที่ต้องเตรียม</h3><ul class="check"><li><input type="checkbox" id="b8"><label for="b8"><b>Alipay + WeChat Pay</b> <span class="due">ก่อนบิน</span><small>ผูกบัตรแล้ว (ใช้ตั้งแต่ทริปเสฉวน)</small></label></li><li><input type="checkbox" id="b9"><label for="b9"><b>eSIM</b> <span class="due">ก่อนบิน</span><small></small></label></li><li><input type="checkbox" id="b10"><label for="b10"><b>ประกันเดินทาง</b> <span class="due">ก่อนบิน</span><small></small></label></li><li><input type="checkbox" id="b11"><label for="b11"><b>รองเท้าเดินดีๆ + เสื้อกันลม</b> <span class="due">ก่อนบิน</span><small>ปลาย ต.ค. บนเขาเย็น ~10–18°C · เดินวันละหลายกิโล</small></label></li><li><input type="checkbox" id="b12"><label for="b12"><b>พาสปอร์ต</b> <span class="due">เช็กเลย</span><small>คนไทยเข้าจีนไม่ต้องขอวีซ่า อยู่ได้ไม่เกิน 30 วัน</small></label></li></ul></div>
+<div class="card" id="checklist"><h3 class="bk">ตอนนี้</h3><ul class="check"><li><input type="checkbox" id="b1"><label for="b1"><b>เลือกวันให้จบ</b> <span class="due">ตอนนี้</span><small>A: 21–27 ต.ค. ลา 4 วัน · B: 22–27 ต.ค. ลา 3 วัน · C: 13–18 ต.ค. ลา 3 วัน</small></label></li><li><input type="checkbox" id="b2"><label for="b2"><b>เช็กประกาศวันหยุดราชการ 2570</b> <span class="due">ตอนออกประกาศ</span><small>ยืนยันว่าจันทร์ 25 ต.ค. เป็นวันหยุดชดเชย</small></label></li></ul><h3 class="bk">2–3 เดือนก่อน</h3><ul class="check"><li><input type="checkbox" id="b3"><label for="b3"><b>ตั๋วเครื่องบิน DMK ⇄ CSX</b> <span class="due">เปิดขาย ~ธ.ค. 2026</span><small>Thai AirAsia บินตรง · ซื้อกระเป๋าโหลดด้วย</small></label></li><li><input type="checkbox" id="b4"><label for="b4"><b>ลางาน</b> <span class="due"></span><small></small></label></li><li><input type="checkbox" id="b5"><label for="b5"><b>ที่พัก 6 คืน</b> <span class="due">ส.ค.–ก.ย. 2027</span><small>ดูโซนที่แนะนำข้างล่าง · เลือกแบบยกเลิกฟรี</small></label></li></ul><h3 class="bk">2–4 สัปดาห์ก่อน</h3><ul class="check"><li><input type="checkbox" id="b6"><label for="b6"><b>ตั๋วรถไฟความเร็วสูง 4 ขา</b> <span class="due">เปิดขาย 15 วันก่อน</span><small>ฉางซาใต้ → จางเจียเจี้ยตะวันตก · → ฝูหรงเจิ้น · → เฟิ่งหวงกู่เฉิง · → ฉางซาใต้ · ตั้งจองล่วงหน้าใน Trip.com</small></label></li><li><input type="checkbox" id="b7"><label for="b7"><b>ตั๋วอุทยานจางเจียเจี้ย</b> <span class="due">7–14 วันก่อน</span><small>ระบุประตูอู่หลิงหยวน <span class="zh">标志门</span> + รอบเข้าวันแรก · ลิฟต์/กระเช้าซื้อหน้างานผ่าน QR ได้</small></label></li><li><input type="checkbox" id="b8"><label for="b8"><b>ตั๋วเทียนเหมินซาน</b> <span class="due">~7 วันก่อน</span><small>จองรอบเช้าสุด 07:30–08:00 · เช็กว่ากระเช้าหลักเปิดหรือยัง ถ้ายัง ซื้อ Line C</small></label></li></ul><h3 class="bk">ของที่ต้องเตรียม</h3><ul class="check"><li><input type="checkbox" id="b9"><label for="b9"><b>Alipay + WeChat Pay + eSIM</b> <span class="due">ก่อนบิน</span><small>ใช้ชุดเดียวกับทริปเสฉวน</small></label></li><li><input type="checkbox" id="b10"><label for="b10"><b>ประกันเดินทาง</b> <span class="due">ก่อนบิน</span><small></small></label></li><li><input type="checkbox" id="b11"><label for="b11"><b>รองเท้าเดินดีๆ + เสื้อกันลม</b> <span class="due">ก่อนบิน</span><small>ปลาย ต.ค. 10–20°C · เดินลงบันไดหมื่นขั้น เข่าทำงานหนัก</small></label></li><li><input type="checkbox" id="b12"><label for="b12"><b>พาสปอร์ต</b> <span class="due">เช็กเลย</span><small>คนไทยเข้าจีนไม่ต้องขอวีซ่า อยู่ได้ไม่เกิน 30 วัน</small></label></li></ul></div>
 
-<h2 id="money">งบ<small>สองคน · ประมาณการทั้งหมด (1 หยวน ≈ 4.7 บาท) · ราคาตั๋วอุทยานปี 2026</small></h2>
-<div class="card scroll"><table><tbody><tr><td>ตั๋วเครื่องบิน</td><td class="muted">สองคน ไป-กลับ (ยังไม่เปิดขาย ประมาณไว้)</td><td class="r">~14,000</td></tr><tr><td>ที่พัก</td><td class="muted">5 คืน</td><td class="r">~6,500</td></tr><tr><td>ตั๋วอุทยาน + ลิฟต์ + กระเช้า</td><td class="muted">¥376/คน</td><td class="r">~3,500</td></tr><tr><td>เทียนเหมินซาน</td><td class="muted">¥288/คน</td><td class="r">~2,700</td></tr><tr><td>รถไฟ / รถบัส / Didi</td><td class="muted"></td><td class="r">~3,000</td></tr><tr><td>อาหาร</td><td class="muted">6 วัน</td><td class="r">~6,000</td></tr><tr><td>อื่นๆ</td><td class="muted">eSIM ประกัน จิปาถะ</td><td class="r">~2,000</td></tr></tbody></table></div>
-<div class="total"><span>รวมทั้งทริป</span><b>~37,700 ฿</b></div>
-<p class="muted" style="font-size:14px">ตกคนละ ~18,850 บาท</p>
+<h2 id="money">งบ<small>สองคน · ประมาณการทั้งหมด (1 หยวน ≈ 4.8 บาท) · ราคาตั๋วอุทยานปี 2026</small></h2>
+<div class="card scroll"><table><tbody><tr><td>ตั๋วเครื่องบิน</td><td class="muted">บินตรง DMK ⇄ CSX + กระเป๋า · ประมาณ 15,000–32,000</td><td class="r">~15,000</td></tr><tr><td>รถไฟความเร็วสูง + รถไฟแม่เหล็ก</td><td class="muted">4 ขา + สนามบิน ~¥460/คน</td><td class="r">~4,400</td></tr><tr><td>ที่พัก</td><td class="muted">6 คืน ~1,500/คืน</td><td class="r">~9,000</td></tr><tr><td>ตั๋วอุทยาน + กระเช้า + เทียนเหมินซาน + ฝูหรงเจิ้น</td><td class="muted">~¥900/คน</td><td class="r">~8,650</td></tr><tr><td>Didi / Metro / รถไฟแม่เหล็กเฟิ่งหวง</td><td class="muted"></td><td class="r">~1,850</td></tr><tr><td>อาหาร</td><td class="muted">~1,200/วัน สองคน</td><td class="r">~8,400</td></tr><tr><td>ประกัน + eSIM</td><td class="muted"></td><td class="r">~1,300</td></tr></tbody></table></div>
+<div class="total"><span>รวมทั้งทริป</span><b>~48,600 ฿</b></div>
+<p class="muted" style="font-size:14px">ตกคนละ ~24,300 บาท · ถ้าตั๋วเครื่องบินแพงแบบที่เห็นช่วงปลาย ก.ย. รวมจะขึ้นไปแถว ~65k</p>
 
-<footer>ภาพจาก Wikimedia Commons (เครดิตใต้ภาพ) · ปกคลิปจาก YouTube ของเจ้าของคลิป · <a href="../">กลับหน้ารวมทริป</a></footer>
+<footer>แพลนร่างจาก Gemini · Claude ตรวจและแก้ · ภาพจาก Wikimedia Commons (เครดิตใต้ภาพ) · ปกคลิปจาก YouTube · <a href="../">กลับหน้ารวมทริป</a></footer>
 </main>
 <script src="../travel.js"></script>
 <script>
-document.querySelectorAll('#checklist input').forEach(c=>{const k='zjj-'+c.id;try{const v=localStorage.getItem(k);if(v!==null)c.checked=v==='1'}catch(e){}c.addEventListener('change',()=>{try{localStorage.setItem(k,c.checked?'1':'0')}catch(e){}})});
+document.querySelectorAll('#checklist input').forEach(c=>{const k='zjj2-'+c.id;try{const v=localStorage.getItem(k);if(v!==null)c.checked=v==='1'}catch(e){}c.addEventListener('change',()=>{try{localStorage.setItem(k,c.checked?'1':'0')}catch(e){}})});
 </script>
 </body></html>
