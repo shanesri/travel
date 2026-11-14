@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Travel — Shane &amp; Poon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Noto+Serif+Thai:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="travel.css">
+<style>
+.intro{padding:56px 0 8px}
+.intro h1{font-size:clamp(44px,10vw,80px);font-style:italic;font-weight:500}
+.intro p{font-size:18px;max-width:560px;color:var(--soft);margin:12px 0 0}
+.yr{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:28px 0 0}
+.yr div{background:var(--card);padding:14px 16px}.yr b{display:block;font-family:var(--serif);font-size:26px}.yr span{font-size:13px;color:var(--soft)}
+.big{max-width:1100px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px;margin-top:18px}
+.trip{display:block;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:transform .15s,box-shadow .15s}
+a.trip:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(60,40,20,.10)}
+.trip .pic{position:relative;aspect-ratio:4/3;background:#ddd}
+.trip .pic img{width:100%;height:100%;object-fit:cover}
+.badge{position:absolute;left:12px;top:12px;background:rgba(255,253,248,.92);border-radius:999px;padding:3px 12px;font-size:13px;font-weight:600}
+.badge:empty{display:none}
+.trip .meta{padding:16px 18px 18px}
+.when{font-size:13px;color:var(--soft)}
+.trip h3{font-size:28px;font-style:italic;font-weight:500;margin:2px 0}
+.place{font-size:15px}
+.tags{list-style:none;padding:0;margin:10px 0 0;display:flex;flex-wrap:wrap;gap:6px}
+.tags li{font-size:13px;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:2px 10px}
+.foot{display:flex;justify-content:space-between;align-items:baseline;margin-top:14px;padding-top:12px;border-top:1px solid var(--line)}
+.price{font-family:var(--serif);font-size:22px;font-weight:600}.price small{font-family:var(--sans);font-size:13px;font-weight:400;color:var(--soft)}
+.st{font-size:13px;color:var(--soft)}
+.idea{opacity:.92}.idea .pic{aspect-ratio:16/9;filter:saturate(.75)}
+.idea .note{font-size:14px;color:var(--soft);margin:8px 0 0}
+.empty{color:var(--soft);font-size:15px;border:1px dashed var(--line);border-radius:18px;padding:22px;text-align:center}
+@media (max-width:560px){.yr{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<nav class="top"><a class="brand" href="https://www.shanesri.com">shanesri</a><span class="muted">Travel</span></nav>
+<main class="wrap big">
+<section class="intro">
+  <div class="kicker">2027 · Shane &amp; Poon</div>
+  <h1>Four trips,<br>one year.</h1>
+  <p>หิมะ ทะเล โลมา ภูเขา — แพลนเที่ยวของเราสองคน เปิดดูตอนเที่ยว หรือลอกไปเที่ยวตามได้เลย</p>
+  <div class="yr">
+    <div><b>4</b><span>ทริป</span></div>
+    <div><b>~27</b><span>วันเที่ยว</span></div>
+    <div><b>3</b><span>ประเทศ</span></div>
+    <div><b>~171k</b><span>บาท · สองคนทั้งปี</span></div>
+  </div>
+</section>
+
+<h2 id="upcoming">Upcoming<small>เรียงตามวันเดินทาง</small></h2>
+<div class="grid" id="up">
+<a class="trip" href="sichuan/" data-start="2026-12-31" data-end="2027-01-06">
+  <div class="pic"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Golden_Summit_%28Jinding%29_%2817264931860%29.jpg/1280px-Golden_Summit_%28Jinding%29_%2817264931860%29.jpg" alt=""><span class="badge" data-countdown="2026-12-31"></span></div>
+  <div class="meta">
+    <div class="when">31 ธ.ค. – 6 ม.ค. · 7 วัน</div>
+    <h3>Snow &amp; Spice</h3>
+    <div class="place">เสฉวน · จีน</div>
+    <ul class="tags"><li>เคาท์ดาวน์</li><li>เดินเขาหิมะ</li><li>พระใหญ่</li><li>หม่าล่า</li></ul>
+    <div class="foot"><span class="price">~43k <small>฿ สองคน</small></span><span class="st">จองครบ</span></div>
+  </div>
+</a><a class="trip" href="philippines/" data-start="2027-04-10" data-end="2027-04-17">
+  <div class="pic"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/2014_11_Moalboal_21_sardine_run_%2816024303526%29.jpg/1280px-2014_11_Moalboal_21_sardine_run_%2816024303526%29.jpg" alt=""><span class="badge" data-countdown="2027-04-10"></span></div>
+  <div class="meta">
+    <div class="when">10 – 17 เม.ย. · 8 วัน</div>
+    <h3>Blue Hours</h3>
+    <div class="place">โมอัลโบอัล + ปังเลา · ฟิลิปปินส์</div>
+    <ul class="tags"><li>ฟรีไดฟ์</li><li>ซาร์ดีน</li><li>เต่า</li></ul>
+    <div class="foot"><span class="price">~50k <small>฿ สองคน</small></span><span class="st">แพลนแล้ว · ยังไม่จอง</span></div>
+  </div>
+</a><a class="trip" href="bali/" data-start="2027-07-10" data-end="2027-07-15">
+  <div class="pic"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Ile_de_Menjangan.jpg/1280px-Ile_de_Menjangan.jpg" alt=""><span class="badge" data-countdown="2027-07-10"></span></div>
+  <div class="meta">
+    <div class="when">~ก.ค. · ~6 วัน</div>
+    <h3>Dolphins at Dawn</h3>
+    <div class="place">ลอวีนา + เมินจางัน · บาหลี</div>
+    <ul class="tags"><li>โลมา</li><li>ดำน้ำ</li><li>บาหลีเหนือ</li></ul>
+    <div class="foot"><span class="price">~40k <small>฿ สองคน</small></span><span class="st">แพลนคร่าวๆ</span></div>
+  </div>
+</a><a class="trip" href="zhangjiajie/" data-start="2027-10-23" data-end="2027-10-28">
+  <div class="pic"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Zhangjiajie_National_Forest_Park_%E5%BC%A0%E5%AE%B6%E7%95%8C%E5%9B%BD%E5%AE%B6%E6%A3%AE%E6%9E%97%E5%85%AC%E5%9B%AD%2C_Hunan%2C_2023_%2852669865292%29.jpg/1280px-Zhangjiajie_National_Forest_Park_%E5%BC%A0%E5%AE%B6%E7%95%8C%E5%9B%BD%E5%AE%B6%E6%A3%AE%E6%9E%97%E5%85%AC%E5%9B%AD%2C_Hunan%2C_2023_%2852669865292%29.jpg" alt=""><span class="badge" data-countdown="2027-10-23"></span></div>
+  <div class="meta">
+    <div class="when">23 – 28 ต.ค. · 6 วัน</div>
+    <h3>Avatar Mountains</h3>
+    <div class="place">จางเจียเจี้ย + เฟิ่งหวง · จีน</div>
+    <ul class="tags"><li>เดินเขา</li><li>ทางเดินกระจก</li><li>เมืองโบราณ</li></ul>
+    <div class="foot"><span class="price">~38k <small>฿ สองคน</small></span><span class="st">ร่างแพลน</span></div>
+  </div>
+</a>
+</div>
+
+<h2 id="previous">Previous<small>ทริปที่กลับมาแล้วจะย้ายมาอยู่ตรงนี้เอง</small></h2>
+<div class="grid" id="prev"><a class="trip" href="act/" data-start="2026-04-06" data-end="2026-04-19">
+  <div class="pic"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Reflection_of_Tilicho_glacier_on_Tilicho_lake_at_4919_meters.jpg/1280px-Reflection_of_Tilicho_glacier_on_Tilicho_lake_at_4919_meters.jpg" alt=""></div>
+  <div class="meta">
+    <div class="when">6 – 19 เม.ย. 2026 · 14 วัน</div>
+    <h3>Thin Air</h3>
+    <div class="place">Annapurna Circuit + Tilicho · เนปาล</div>
+    <ul class="tags"><li>เทรค 5,416 ม.</li><li>Thorong La</li><li>ทะเลสาบ Tilicho</li></ul>
+    <div class="foot"><span class="price">~54k <small>฿ ต่อคน</small></span><span class="st">ไปมาแล้ว</span></div>
+  </div>
+</a></div>
+
+<h2 id="someday">Someday<small>แพลนไว้แล้ว แต่ยังไม่ลงวัน</small></h2>
+<div class="grid"><div class="trip idea"><div class="pic"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Mt_Manaslu.jpg/1280px-Mt_Manaslu.jpg" alt=""></div><div class="meta"><div class="when">ยังไม่ลงวัน · ~14 วัน</div><h3>Manaslu Circuit</h3><div class="place">เนปาล · เทรค 5,000 ม.+</div><p class="note">อยากได้ฟีลแบบ ACT อีกรอบ · เพื่อนชวนไปเม.ย. แต่ปีนี้ยังไม่ได้</p></div></div><div class="trip idea"><div class="pic"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/HuaShan_Mountain.jpg/1280px-HuaShan_Mountain.jpg" alt=""></div><div class="meta"><div class="when">ยังไม่ลงวัน · ~5 วัน</div><h3>Xi'an + Huashan</h3><div class="place">ซีอาน · จีน</div><p class="note">ทหารดินเผา + ทางเดินไม้หน้าผาหัวซาน · แพลนไว้แล้วแต่ยังไม่ลงปี</p></div></div></div>
+
+<footer>ภาพจาก Wikimedia Commons (เครดิตอยู่ในหน้าแต่ละทริป) · หน้านี้ไม่ได้เปิดให้ Google ค้นเจอ</footer>
+</main>
+<script>
+// move finished trips to Previous automatically
+(function(){const now=Date.now(),prev=document.getElementById('prev');
+document.querySelectorAll('#up .trip').forEach(c=>{if(new Date(c.dataset.end+'T23:59:59+07:00')<now){prev.prepend(c);const b=c.querySelector('.badge');if(b)b.remove();const s=c.querySelector('.st');if(s)s.textContent='ไปมาแล้ว'}});
+})();
+</script>
+<script src="travel.js"></script>
+</body></html>
