@@ -23,8 +23,8 @@ window.TRIPS=[
   img:T+'1/1f/Perhentian_Islands%2C_Malaysia%2C_Beach.jpg/1280px-Perhentian_Islands%2C_Malaysia%2C_Beach.jpg'},
  {slug:'xinjiang-2028',year:2028,name:'Across the Tianshan',place:'เส้นทางโบราณอู๋ซุน · ซินเจียง',country:'จีน',start:'2028-08-10',end:'2028-08-19',when:'~10 – 19 ส.ค. (วันแม่)',days:10,cost:112000,price:'~112k ฿ สองคน',status:'ไอเดีย',tags:['เทรค 7 วัน','ช่องเขา 3,860 ม.','ทะเลสาบสวรรค์'],
   img:T+'d/d1/Nalati_Grassland_2.jpg/1280px-Nalati_Grassland_2.jpg'},
- {slug:'lanta-2028',year:2028,name:'Slow Lanta',place:'เกาะลันตา · เกาะห้า / เกาะรอก',country:'ไทย',start:'2028-11-18',end:'2028-11-21',when:'~18 – 21 พ.ย.',days:4,cost:15000,price:'~15k ฿ สองคน',status:'ไอเดีย',tags:['ฟรีไดฟ์','ต้นไฮซีซั่น','ปิดปีชิลๆ'],
-  img:T+'2/2c/Beach_ko_rok_yai%2C_Thailand_-_Strand_%2819507307333%29.jpg/1280px-Beach_ko_rok_yai%2C_Thailand_-_Strand_%2819507307333%29.jpg'},
+ {slug:'lipe-2028',year:2028,name:'Lipe Blue',place:'เกาะหลีเป๊ะ · อุทยานตะรุเตา',country:'ไทย',start:'2028-11-18',end:'2028-11-22',when:'~18 – 22 พ.ย.',days:5,cost:22000,price:'~22k ฿ สองคน',status:'ไอเดีย',tags:['ฟรีไดฟ์','เหมาหางยาว','ถนนคนเดิน'],
+  img:T+'5/56/Ko_Lipe_beach.JPG/1280px-Ko_Lipe_beach.JPG'},
 ];
 window.SOMEDAY=[
  {name:'Manaslu Circuit',place:'เนปาล · เทรค 5,000 ม.+',days:'~14 วัน',note:'อยากได้ฟีลแบบ ACT อีกรอบ · เพื่อนชวนไปเม.ย. แต่ยังไม่ลงปี',img:T+'2/24/Mt_Manaslu.jpg/1280px-Mt_Manaslu.jpg'},
