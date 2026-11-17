@@ -9,112 +9,139 @@
 <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Noto+Serif+Thai:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="travel.css">
 <style>
-.intro{padding:56px 0 8px}
-.intro h1{font-size:clamp(44px,10vw,80px);font-style:italic;font-weight:500}
-.intro p{font-size:18px;max-width:560px;color:var(--soft);margin:12px 0 0}
-.yr{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:28px 0 0}
-.yr div{background:var(--card);padding:14px 16px}.yr b{display:block;font-family:var(--serif);font-size:26px}.yr span{font-size:13px;color:var(--soft)}
 .big{max-width:1100px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px;margin-top:18px}
+.intro{padding:48px 0 4px}
+.intro h1{font-size:clamp(52px,12vw,96px);font-style:italic;font-weight:500}
+.intro p{font-size:18px;max-width:560px;color:var(--soft);margin:10px 0 0}
+.allstats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:26px 0 0}
+.allstats div{background:var(--card);padding:14px 16px}.allstats b{display:block;font-family:var(--serif);font-size:26px}.allstats span{font-size:13px;color:var(--soft)}
+/* next up */
+.next{display:grid;grid-template-columns:1.3fr 1fr;background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;text-decoration:none;margin-top:16px}
+.next .pic{min-height:280px;background:#ddd}.next .pic img{width:100%;height:100%;object-fit:cover}
+.next .meta{padding:26px}
+.next h3{font-size:clamp(32px,5vw,46px);font-style:italic;font-weight:500;margin:4px 0}
+.next .cd{font-family:var(--serif);font-size:30px;color:var(--accent);margin-top:14px}
+/* chips */
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:40px 0 0;position:sticky;top:0;background:var(--paper);padding:10px 0;z-index:3}
+.chip{font:inherit;font-size:14px;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 16px;cursor:pointer;color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+/* year block */
+.year{margin-top:44px}
+.yhead{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 18px;border-bottom:1px solid var(--line);padding-bottom:10px}
+.yhead h3{font-size:clamp(40px,8vw,60px);font-style:italic;font-weight:500;line-height:1}
+.yhead .sum{font-size:15px;color:var(--soft)}
+.yhead .sum b{color:var(--ink);font-weight:600}
+.ybar{display:flex;height:8px;border-radius:99px;overflow:hidden;margin-top:12px;background:var(--line)}
+.ybar span{display:block;height:100%}
+.ylegend{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12px;color:var(--soft);margin-top:6px}
+.ylegend i{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:4px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;margin-top:18px}
 .trip{display:block;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:transform .15s,box-shadow .15s}
 a.trip:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(60,40,20,.10)}
 .trip .pic{position:relative;aspect-ratio:4/3;background:#ddd}
 .trip .pic img{width:100%;height:100%;object-fit:cover}
 .badge{position:absolute;left:12px;top:12px;background:rgba(255,253,248,.92);border-radius:999px;padding:3px 12px;font-size:13px;font-weight:600}
 .badge:empty{display:none}
+.flag{position:absolute;right:12px;top:12px;background:rgba(35,32,28,.75);color:#fff;border-radius:999px;padding:3px 10px;font-size:12px}
 .trip .meta{padding:16px 18px 18px}
 .when{font-size:13px;color:var(--soft)}
-.trip h3{font-size:28px;font-style:italic;font-weight:500;margin:2px 0}
+.trip h4{font-family:var(--serif);font-size:26px;font-style:italic;font-weight:500;margin:2px 0;line-height:1.2}
 .place{font-size:15px}
 .tags{list-style:none;padding:0;margin:10px 0 0;display:flex;flex-wrap:wrap;gap:6px}
 .tags li{font-size:13px;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:2px 10px}
-.foot{display:flex;justify-content:space-between;align-items:baseline;margin-top:14px;padding-top:12px;border-top:1px solid var(--line)}
-.price{font-family:var(--serif);font-size:22px;font-weight:600}.price small{font-family:var(--sans);font-size:13px;font-weight:400;color:var(--soft)}
-.st{font-size:13px;color:var(--soft)}
-.idea{opacity:.92}.idea .pic{aspect-ratio:16/9;filter:saturate(.75)}
+.foot{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-top:14px;padding-top:12px;border-top:1px solid var(--line)}
+.price{font-family:var(--serif);font-size:20px;font-weight:600}
+.st{font-size:12px;color:var(--soft);text-align:right}
+.past .pic img{filter:saturate(.8)}
+.idea .pic{aspect-ratio:16/9;filter:saturate(.75)}
 .idea .note{font-size:14px;color:var(--soft);margin:8px 0 0}
-.empty{color:var(--soft);font-size:15px;border:1px dashed var(--line);border-radius:18px;padding:22px;text-align:center}
-@media (max-width:560px){.yr{grid-template-columns:repeat(2,1fr)}}
+.sec{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600;margin:60px 0 0}
+.empty{color:var(--soft);font-size:15px;border:1px dashed var(--line);border-radius:18px;padding:22px;text-align:center;margin-top:16px}
+@media (max-width:720px){.next{grid-template-columns:1fr}.next .pic{min-height:200px}.allstats{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body>
 <nav class="top"><a class="brand" href="https://www.shanesri.com">shanesri</a><span class="muted">Travel</span></nav>
 <main class="wrap big">
 <section class="intro">
-  <div class="kicker">2027 · Shane &amp; Poon</div>
-  <h1>Four trips,<br>one year.</h1>
-  <p>หิมะ ทะเล โลมา ภูเขา — แพลนเที่ยวของเราสองคน เปิดดูตอนเที่ยว หรือลอกไปเที่ยวตามได้เลย</p>
-  <div class="yr">
-    <div><b>4</b><span>ทริป</span></div>
-    <div><b>~27</b><span>วันเที่ยว</span></div>
-    <div><b>3</b><span>ประเทศ</span></div>
-    <div><b>~184k</b><span>บาท · สองคนทั้งปี</span></div>
-  </div>
+  <div class="kicker">Shane &amp; Poon</div>
+  <h1>Travel</h1>
+  <p>แพลนเที่ยวของเราสองคน ปีละหลายทริป เปิดดูตอนเที่ยว หรือลอกไปเที่ยวตามได้เลย</p>
+  <div class="allstats" id="allstats"></div>
 </section>
 
-<h2 id="upcoming">Upcoming<small>เรียงตามวันเดินทาง</small></h2>
-<div class="grid" id="up">
-<a class="trip" href="sichuan/" data-start="2026-12-31" data-end="2027-01-06">
-  <div class="pic"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Golden_Summit_%28Jinding%29_%2817264931860%29.jpg/1280px-Golden_Summit_%28Jinding%29_%2817264931860%29.jpg" alt=""><span class="badge" data-countdown="2026-12-31"></span></div>
-  <div class="meta">
-    <div class="when">31 ธ.ค. – 6 ม.ค. · 7 วัน</div>
-    <h3>Snow &amp; Spice</h3>
-    <div class="place">เสฉวน · จีน</div>
-    <ul class="tags"><li>เคาท์ดาวน์</li><li>เดินเขาหิมะ</li><li>พระใหญ่</li><li>หม่าล่า</li></ul>
-    <div class="foot"><span class="price">~43k <small>฿ สองคน</small></span><span class="st">จองครบ</span></div>
-  </div>
-</a><a class="trip" href="philippines/" data-start="2027-04-10" data-end="2027-04-17">
-  <div class="pic"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/2014_11_Moalboal_21_sardine_run_%2816024303526%29.jpg/1280px-2014_11_Moalboal_21_sardine_run_%2816024303526%29.jpg" alt=""><span class="badge" data-countdown="2027-04-10"></span></div>
-  <div class="meta">
-    <div class="when">10 – 17 เม.ย. · 8 วัน</div>
-    <h3>Blue Hours</h3>
-    <div class="place">โมอัลโบอัล + ปังเลา · ฟิลิปปินส์</div>
-    <ul class="tags"><li>ฟรีไดฟ์</li><li>ซาร์ดีน</li><li>เต่า</li></ul>
-    <div class="foot"><span class="price">~50k <small>฿ สองคน</small></span><span class="st">แพลนแล้ว · ยังไม่จอง</span></div>
-  </div>
-</a><a class="trip" href="bali/" data-start="2027-07-17" data-end="2027-07-21">
-  <div class="pic"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Ile_de_Menjangan.jpg/1280px-Ile_de_Menjangan.jpg" alt=""><span class="badge" data-countdown="2027-07-17"></span></div>
-  <div class="meta">
-    <div class="when">~17 – 21 ก.ค. · 5 วัน</div>
-    <h3>Dolphins at Dawn</h3>
-    <div class="place">ลอวีนา + เปอมูเตรัน + เมินจางัน · บาหลี</div>
-    <ul class="tags"><li>ว่ายกับโลมา</li><li>ฟรีไดฟ์</li><li>ดำน้ำทุกวัน</li></ul>
-    <div class="foot"><span class="price">~42k <small>฿ สองคน</small></span><span class="st">ร่างแพลน</span></div>
-  </div>
-</a><a class="trip" href="zhangjiajie/" data-start="2027-10-21" data-end="2027-10-27">
-  <div class="pic"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Zhangjiajie_National_Forest_Park_%E5%BC%A0%E5%AE%B6%E7%95%8C%E5%9B%BD%E5%AE%B6%E6%A3%AE%E6%9E%97%E5%85%AC%E5%9B%AD%2C_Hunan%2C_2023_%2852669865292%29.jpg/1280px-Zhangjiajie_National_Forest_Park_%E5%BC%A0%E5%AE%B6%E7%95%8C%E5%9B%BD%E5%AE%B6%E6%A3%AE%E6%9E%97%E5%85%AC%E5%9B%AD%2C_Hunan%2C_2023_%2852669865292%29.jpg" alt=""><span class="badge" data-countdown="2027-10-21"></span></div>
-  <div class="meta">
-    <div class="when">~21 – 27 ต.ค. · 7 วัน</div>
-    <h3>Avatar Mountains</h3>
-    <div class="place">จางเจียเจี้ย + ฝูหรงเจิ้น + เฟิ่งหวง · จีน</div>
-    <ul class="tags"><li>เดินเขา</li><li>ทางเดินกระจก</li><li>เมืองโบราณ</li></ul>
-    <div class="foot"><span class="price">~49k <small>฿ สองคน</small></span><span class="st">ร่างแพลน</span></div>
-  </div>
-</a>
-</div>
+<div class="sec">Next up</div>
+<div id="next"></div>
 
-<h2 id="previous">Previous<small>ทริปที่กลับมาแล้วจะย้ายมาอยู่ตรงนี้เอง</small></h2>
-<div class="grid" id="prev"><a class="trip" href="act/" data-start="2026-04-06" data-end="2026-04-19">
-  <div class="pic"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Reflection_of_Tilicho_glacier_on_Tilicho_lake_at_4919_meters.jpg/1280px-Reflection_of_Tilicho_glacier_on_Tilicho_lake_at_4919_meters.jpg" alt=""></div>
-  <div class="meta">
-    <div class="when">6 – 19 เม.ย. 2026 · 14 วัน</div>
-    <h3>Thin Air</h3>
-    <div class="place">Annapurna Circuit + Tilicho · เนปาล</div>
-    <ul class="tags"><li>เทรค 5,416 ม.</li><li>Thorong La</li><li>ทะเลสาบ Tilicho</li></ul>
-    <div class="foot"><span class="price">~54k <small>฿ ต่อคน</small></span><span class="st">ไปมาแล้ว</span></div>
-  </div>
-</a></div>
+<div class="chips" id="chips" role="toolbar" aria-label="เลือกปี"></div>
 
-<h2 id="someday">Someday<small>แพลนไว้แล้ว แต่ยังไม่ลงวัน</small></h2>
-<div class="grid"><div class="trip idea"><div class="pic"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Mt_Manaslu.jpg/1280px-Mt_Manaslu.jpg" alt=""></div><div class="meta"><div class="when">ยังไม่ลงวัน · ~14 วัน</div><h3>Manaslu Circuit</h3><div class="place">เนปาล · เทรค 5,000 ม.+</div><p class="note">อยากได้ฟีลแบบ ACT อีกรอบ · เพื่อนชวนไปเม.ย. แต่ปีนี้ยังไม่ได้</p></div></div><div class="trip idea"><div class="pic"><img loading="lazy" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/HuaShan_Mountain.jpg/1280px-HuaShan_Mountain.jpg" alt=""></div><div class="meta"><div class="when">ยังไม่ลงวัน · ~5 วัน</div><h3>Xi'an + Huashan</h3><div class="place">ซีอาน · จีน</div><p class="note">ทหารดินเผา + ทางเดินไม้หน้าผาหัวซาน · แพลนไว้แล้วแต่ยังไม่ลงปี</p></div></div></div>
+<div class="sec">Upcoming</div>
+<div id="upcoming"></div>
 
-<footer>ภาพจาก Wikimedia Commons (เครดิตอยู่ในหน้าแต่ละทริป) · หน้านี้ไม่ได้เปิดให้ Google ค้นเจอ</footer>
+<div class="sec">Previous</div>
+<div id="previous"></div>
+
+<div class="sec">Someday</div>
+<p class="muted" style="margin:6px 0 0">แพลนไว้แล้ว แต่ยังไม่ลงปี</p>
+<div class="grid" id="someday"></div>
+
+<noscript><p>เปิด JavaScript เพื่อดูรายการทริป</p></noscript>
+<footer>ภาพจาก Wikimedia Commons (เครดิตอยู่ในหน้าแต่ละทริป) · หน้านี้ไม่ได้เปิดให้ Google ค้นเจอ · เพิ่มทริปใหม่ได้ที่ไฟล์ trips.js</footer>
 </main>
+<script src="trips.js"></script>
 <script>
-// move finished trips to Previous automatically
-(function(){const now=Date.now(),prev=document.getElementById('prev');
-document.querySelectorAll('#up .trip').forEach(c=>{if(new Date(c.dataset.end+'T23:59:59+07:00')<now){prev.prepend(c);const b=c.querySelector('.badge');if(b)b.remove();const s=c.querySelector('.st');if(s)s.textContent='ไปมาแล้ว'}});
+(function(){
+const TODAY=Date.now();
+const d=s=>new Date(s+'T00:00:00+07:00').getTime();
+const trips=window.TRIPS.slice().sort((a,b)=>d(a.start)-d(b.start));
+const isPast=t=>d(t.end)+864e5<TODAY;
+const fmtK=n=>'~'+Math.round(n/1000)+'k';
+const COL=['#A8322A','#1F5E8C','#2E7D78','#3F6B3A','#B8862B','#6B4E8C','#8C5A2E','#2F4A6D'];
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function cdText(t){const n=Math.ceil((d(t.start)-TODAY)/864e5);if(n>1)return 'อีก '+n+' วัน';if(n===1)return 'พรุ่งนี้!';if(!isPast(t))return 'กำลังเที่ยว';return '';}
+function card(t){const past=isPast(t);
+  return `<a class="trip${past?' past':''}" href="${t.slug}/">
+  <div class="pic"><img loading="lazy" src="${t.img}" alt=""><span class="badge">${past?'':esc(cdText(t))}</span><span class="flag">${esc(t.country)}</span></div>
+  <div class="meta"><div class="when">${esc(t.when)} · ${t.days} วัน</div><h4>${esc(t.name)}</h4><div class="place">${esc(t.place)}</div>
+  <ul class="tags">${t.tags.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>
+  <div class="foot"><span class="price">${esc(t.price)}</span><span class="st">${past?'ไปมาแล้ว':esc(t.status||'')}</span></div></div></a>`;}
+function yearBlock(y,list,all){
+  const yl=all.filter(t=>t.year===y);const cost=yl.reduce((a,t)=>a+t.cost,0),days=yl.reduce((a,t)=>a+t.days,0);
+  const countries=[...new Set(yl.map(t=>t.country))].length;
+  const bar=yl.map((t,i)=>`<span style="width:${t.cost/cost*100}%;background:${COL[i%COL.length]}" title="${esc(t.name)}"></span>`).join('');
+  const leg=yl.map((t,i)=>`<span><i style="background:${COL[i%COL.length]}"></i>${esc(t.name)} ${fmtK(t.cost)}</span>`).join('');
+  return `<section class="year" data-year="${y}"><div class="yhead"><h3>${y}</h3><div class="sum"><b>${yl.length}</b> ทริป · <b>${days}</b> วัน · <b>${countries}</b> ประเทศ · งบ <b>${fmtK(cost)} ฿</b> สองคน</div></div>
+  <div class="ybar">${bar}</div><div class="ylegend">${leg}</div>
+  <div class="grid">${list.map(card).join('')}</div></section>`;}
+// all-time stats
+const done=trips.filter(isPast);
+document.getElementById('allstats').innerHTML=[
+ [trips.length,'ทริปในแพลน'],[done.length,'ไปมาแล้ว'],[new Set(trips.map(t=>t.country)).size,'ประเทศ'],[trips.reduce((a,t)=>a+t.days,0),'วันเที่ยวรวม']
+].map(([n,l])=>`<div><b>${n}</b><span>${l}</span></div>`).join('');
+// next up
+const up=trips.filter(t=>!isPast(t));
+const nx=up[0];
+document.getElementById('next').innerHTML=nx?`<a class="next" href="${nx.slug}/"><div class="pic"><img src="${nx.img}" alt=""></div><div class="meta"><div class="when">${esc(nx.when)} · ${nx.days} วัน · ${esc(nx.country)}</div><h3>${esc(nx.name)}</h3><div class="place">${esc(nx.place)}</div><ul class="tags">${nx.tags.map(x=>`<li>${esc(x)}</li>`).join('')}</ul><div class="cd">${esc(cdText(nx))}</div><div class="muted" style="font-size:14px;margin-top:6px">${esc(nx.price)}</div></div></a>`:'<p class="empty">ยังไม่มีทริปข้างหน้า</p>';
+// group by year
+const years=[...new Set(trips.map(t=>t.year))].sort();
+const upYears=years.filter(y=>up.some(t=>t.year===y));
+const pastYears=years.filter(y=>done.some(t=>t.year===y)).reverse();
+const render=sel=>{
+  const f=y=>sel==='all'||String(y)===sel;
+  const u=upYears.filter(f).map(y=>yearBlock(y,up.filter(t=>t.year===y),trips)).join('');
+  const p=pastYears.filter(f).map(y=>yearBlock(y,done.filter(t=>t.year===y),trips)).join('');
+  document.getElementById('upcoming').innerHTML=u||'<p class="empty">ไม่มีทริปข้างหน้าในปีนี้</p>';
+  document.getElementById('previous').innerHTML=p||'<p class="empty">ยังไม่มีทริปที่ไปมาแล้วในปีนี้</p>';
+  document.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',c.dataset.y===sel));
+  try{localStorage.setItem('yr',sel)}catch(e){}
+};
+const chips=document.getElementById('chips');
+chips.innerHTML=['all',...years.slice().reverse().map(String)].map(y=>`<button class="chip" type="button" data-y="${y}">${y==='all'?'ทุกปี':y}</button>`).join('');
+chips.addEventListener('click',e=>{const b=e.target.closest('.chip');if(b)render(b.dataset.y)});
+let start='all';try{const v=localStorage.getItem('yr');if(v&&(v==='all'||years.includes(+v)))start=v}catch(e){}
+render(start);
+// someday
+document.getElementById('someday').innerHTML=window.SOMEDAY.map(s=>`<div class="trip idea"><div class="pic"><img loading="lazy" src="${s.img}" alt=""></div><div class="meta"><div class="when">ยังไม่ลงปี · ${esc(s.days)}</div><h4>${esc(s.name)}</h4><div class="place">${esc(s.place)}</div><p class="note">${esc(s.note)}</p></div></div>`).join('');
 })();
 </script>
-<script src="travel.js"></script>
 </body></html>
