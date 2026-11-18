@@ -13,18 +13,6 @@
 .intro{padding:48px 0 4px}
 .intro h1{font-size:clamp(52px,12vw,96px);font-style:italic;font-weight:500}
 .intro p{font-size:18px;max-width:560px;color:var(--soft);margin:10px 0 0}
-.allstats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:26px 0 0}
-.allstats div{background:var(--card);padding:14px 16px}.allstats b{display:block;font-family:var(--serif);font-size:26px}.allstats span{font-size:13px;color:var(--soft)}
-/* next up */
-.next{display:grid;grid-template-columns:1.3fr 1fr;background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;text-decoration:none;margin-top:16px}
-.next .pic{min-height:280px;background:#ddd}.next .pic img{width:100%;height:100%;object-fit:cover}
-.next .meta{padding:26px}
-.next h3{font-size:clamp(32px,5vw,46px);font-style:italic;font-weight:500;margin:4px 0}
-.next .cd{font-family:var(--serif);font-size:30px;color:var(--accent);margin-top:14px}
-/* chips */
-.chips{display:flex;gap:8px;flex-wrap:wrap;margin:40px 0 0;position:sticky;top:0;background:var(--paper);padding:10px 0;z-index:3}
-.chip{font:inherit;font-size:14px;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 16px;cursor:pointer;color:var(--ink)}
-.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
 /* year block */
 .year{margin-top:44px}
 .yhead{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 18px;border-bottom:1px solid var(--line);padding-bottom:10px}
@@ -53,11 +41,13 @@ a.trip:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(60,40,20,.10
 .price{font-family:var(--serif);font-size:20px;font-weight:600}
 .st{font-size:12px;color:var(--soft);text-align:right}
 .past .pic img{filter:saturate(.8)}
-.idea .pic{aspect-ratio:16/9;filter:saturate(.75)}
-.idea .note{font-size:14px;color:var(--soft);margin:8px 0 0}
+.idea .pic{position:relative;aspect-ratio:16/9;background:#ddd}.idea .pic img{width:100%;height:100%;object-fit:cover}
+.idea .note{font-size:14px;color:var(--ink);margin:8px 0 0;line-height:1.6}
+.idea .peak{font-size:14px;color:var(--accent);margin-top:8px;font-weight:500}
+.idea .cred{display:block;font-size:11px;color:var(--soft);margin-top:8px;text-decoration:none}
+.idea h4{font-size:24px}
 .sec{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600;margin:60px 0 0}
 .empty{color:var(--soft);font-size:15px;border:1px dashed var(--line);border-radius:18px;padding:22px;text-align:center;margin-top:16px}
-@media (max-width:720px){.next{grid-template-columns:1fr}.next .pic{min-height:200px}.allstats{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body>
@@ -66,14 +56,8 @@ a.trip:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(60,40,20,.10
 <section class="intro">
   <div class="kicker">Shane &amp; Poon</div>
   <h1>Travel</h1>
-  <p>แพลนเที่ยวของเราสองคน ปีละหลายทริป เปิดดูตอนเที่ยว หรือลอกไปเที่ยวตามได้เลย</p>
-  <div class="allstats" id="allstats"></div>
+  <p>แพลนเที่ยวแต่ละปี เปิดดูตอนเดินทาง หรือลอกรูทไปเที่ยวตามได้เลย</p>
 </section>
-
-<div class="sec">Next up</div>
-<div id="next"></div>
-
-<div class="chips" id="chips" role="toolbar" aria-label="เลือกปี"></div>
 
 <div class="sec">Upcoming</div>
 <div id="upcoming"></div>
@@ -82,7 +66,7 @@ a.trip:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(60,40,20,.10
 <div id="previous"></div>
 
 <div class="sec">Someday</div>
-<p class="muted" style="margin:6px 0 0">แพลนไว้แล้ว แต่ยังไม่ลงปี</p>
+<p class="muted" style="margin:6px 0 0">อยากไป แต่ยังไม่ลงปี · งบเป็นสองคน All-in โดยประมาณ</p>
 <div class="grid" id="someday"></div>
 
 <noscript><p>เปิด JavaScript เพื่อดูรายการทริป</p></noscript>
@@ -113,35 +97,15 @@ function yearBlock(y,list,all){
   return `<section class="year" data-year="${y}"><div class="yhead"><h3>${y}</h3><div class="sum"><b>${yl.length}</b> ทริป · <b>${days}</b> วัน · <b>${countries}</b> ประเทศ · งบ <b>${fmtK(cost)} ฿</b> สองคน</div></div>
   <div class="ybar">${bar}</div><div class="ylegend">${leg}</div>
   <div class="grid">${list.map(card).join('')}</div></section>`;}
-// all-time stats
 const done=trips.filter(isPast);
-document.getElementById('allstats').innerHTML=[
- [trips.length,'ทริปในแพลน'],[done.length,'ไปมาแล้ว'],[new Set(trips.map(t=>t.country)).size,'ประเทศ'],[trips.reduce((a,t)=>a+t.days,0),'วันเที่ยวรวม']
-].map(([n,l])=>`<div><b>${n}</b><span>${l}</span></div>`).join('');
-// next up
 const up=trips.filter(t=>!isPast(t));
-const nx=up[0];
-document.getElementById('next').innerHTML=nx?`<a class="next" href="${nx.slug}/"><div class="pic"><img src="${nx.img}" alt=""></div><div class="meta"><div class="when">${esc(nx.when)} · ${nx.days} วัน · ${esc(nx.country)}</div><h3>${esc(nx.name)}</h3><div class="place">${esc(nx.place)}</div><ul class="tags">${nx.tags.map(x=>`<li>${esc(x)}</li>`).join('')}</ul><div class="cd">${esc(cdText(nx))}</div><div class="muted" style="font-size:14px;margin-top:6px">${esc(nx.price)}</div></div></a>`:'<p class="empty">ยังไม่มีทริปข้างหน้า</p>';
-// group by year
 const years=[...new Set(trips.map(t=>t.year))].sort();
 const upYears=years.filter(y=>up.some(t=>t.year===y));
 const pastYears=years.filter(y=>done.some(t=>t.year===y)).reverse();
-const render=sel=>{
-  const f=y=>sel==='all'||String(y)===sel;
-  const u=upYears.filter(f).map(y=>yearBlock(y,up.filter(t=>t.year===y),trips)).join('');
-  const p=pastYears.filter(f).map(y=>yearBlock(y,done.filter(t=>t.year===y),trips)).join('');
-  document.getElementById('upcoming').innerHTML=u||'<p class="empty">ไม่มีทริปข้างหน้าในปีนี้</p>';
-  document.getElementById('previous').innerHTML=p||'<p class="empty">ยังไม่มีทริปที่ไปมาแล้วในปีนี้</p>';
-  document.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',c.dataset.y===sel));
-  try{localStorage.setItem('yr',sel)}catch(e){}
-};
-const chips=document.getElementById('chips');
-chips.innerHTML=['all',...years.slice().reverse().map(String)].map(y=>`<button class="chip" type="button" data-y="${y}">${y==='all'?'ทุกปี':y}</button>`).join('');
-chips.addEventListener('click',e=>{const b=e.target.closest('.chip');if(b)render(b.dataset.y)});
-let start='all';try{const v=localStorage.getItem('yr');if(v&&(v==='all'||years.includes(+v)))start=v}catch(e){}
-render(start);
+document.getElementById('upcoming').innerHTML=upYears.map(y=>yearBlock(y,up.filter(t=>t.year===y),trips)).join('')||'<p class="empty">ยังไม่มีทริปข้างหน้า</p>';
+document.getElementById('previous').innerHTML=pastYears.map(y=>yearBlock(y,done.filter(t=>t.year===y),trips)).join('')||'<p class="empty">ยังไม่มีทริปที่ไปมาแล้ว</p>';
 // someday
-document.getElementById('someday').innerHTML=window.SOMEDAY.map(s=>`<div class="trip idea"><div class="pic"><img loading="lazy" src="${s.img}" alt=""></div><div class="meta"><div class="when">ยังไม่ลงปี · ${esc(s.days)}</div><h4>${esc(s.name)}</h4><div class="place">${esc(s.place)}</div><p class="note">${esc(s.note)}</p></div></div>`).join('');
+document.getElementById('someday').innerHTML=window.SOMEDAY.map(x=>`<div class="trip idea"><div class="pic"><img loading="lazy" src="${x.img}" alt=""><span class="flag">${esc(x.country)}</span></div><div class="meta"><div class="when">${esc(x.days)}</div><h4>${esc(x.name)}</h4><p class="note">${esc(x.note)}</p><div class="peak">🗓 ช่วงพีค: ${esc(x.peak)}</div><div class="foot"><span class="price">${esc(x.price)}</span><span class="st">สองคน</span></div><a class="cred" href="https://commons.wikimedia.org/wiki/File:${encodeURIComponent(x.file)}" target="_blank" rel="noopener">ภาพ: ${esc(x.credit)}</a></div></div>`).join('');
 })();
 </script>
 </body></html>
