@@ -46,6 +46,14 @@ a.trip:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(60,40,20,.10
 .idea .peak{font-size:14px;color:var(--accent);margin-top:8px;font-weight:500}
 .idea .cred{display:block;font-size:11px;color:var(--soft);margin-top:8px;text-decoration:none}
 .idea h4{font-size:24px}
+.sec-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px}
+.sort{display:flex;gap:6px;flex-wrap:wrap}
+.sort button{font:inherit;font-size:13px;padding:4px 11px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.sort button.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.sort button span{font-weight:600}
+a.idea{text-decoration:none;color:inherit}
+.idea .cred{pointer-events:none}
+
 .sec{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600;margin:60px 0 0}
 .empty{color:var(--soft);font-size:15px;border:1px dashed var(--line);border-radius:18px;padding:22px;text-align:center;margin-top:16px}
 </style>
@@ -65,7 +73,7 @@ a.trip:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(60,40,20,.10
 <div class="sec">Previous</div>
 <div id="previous"></div>
 
-<div class="sec">Someday</div>
+<div class="sec-row"><div class="sec">Someday</div><div class="sort" id="sort" role="group" aria-label="เรียงลำดับ"><button type="button" data-k="def" class="on">ค่าเริ่มต้น</button><button type="button" data-k="budgetMin">เรียงตามงบ <span></span></button><button type="button" data-k="daysMin">เรียงตามวัน <span></span></button></div></div>
 <p class="muted" style="margin:6px 0 0">อยากไป แต่ยังไม่ลงปี · งบเป็นสองคน All-in โดยประมาณ</p>
 <div class="grid" id="someday"></div>
 
@@ -105,7 +113,14 @@ const pastYears=years.filter(y=>done.some(t=>t.year===y)).reverse();
 document.getElementById('upcoming').innerHTML=upYears.map(y=>yearBlock(y,up.filter(t=>t.year===y),trips)).join('')||'<p class="empty">ยังไม่มีทริปข้างหน้า</p>';
 document.getElementById('previous').innerHTML=pastYears.map(y=>yearBlock(y,done.filter(t=>t.year===y),trips)).join('')||'<p class="empty">ยังไม่มีทริปที่ไปมาแล้ว</p>';
 // someday
-document.getElementById('someday').innerHTML=window.SOMEDAY.map(x=>`<div class="trip idea"><div class="pic"><img loading="lazy" src="${x.img}" alt=""><span class="flag">${esc(x.country)}</span></div><div class="meta"><div class="when">${esc(x.days)}</div><h4>${esc(x.name)}</h4><p class="note">${esc(x.note)}</p><div class="peak">🗓 ช่วงพีค: ${esc(x.peak)}</div><div class="foot"><span class="price">${esc(x.price)}</span><span class="st">สองคน</span></div><a class="cred" href="https://commons.wikimedia.org/wiki/File:${encodeURIComponent(x.file)}" target="_blank" rel="noopener">ภาพ: ${esc(x.credit)}</a></div></div>`).join('');
+const SD=window.SOMEDAY.map((x,i)=>({...x,_i:i}));
+const sdCard=x=>`<a class="trip idea" href="${x.slug}/"><div class="pic"><img loading="lazy" src="${x.img}" alt=""><span class="flag">${esc(x.country)}</span></div><div class="meta"><div class="when">${esc(x.days)}</div><h4>${esc(x.name)}</h4><p class="note">${esc(x.note)}</p><div class="peak">🗓 ช่วงพีค: ${esc(x.peak)}</div><div class="foot"><span class="price">${esc(x.price)}</span><span class="st">สองคน</span></div><span class="cred">ภาพ: ${esc(x.credit)} · Wikimedia Commons</span></div></a>`;
+let sk='def',dir=1;
+function drawSD(){const l=[...SD].sort(sk==='def'?(a,b)=>a._i-b._i:(a,b)=>(a[sk]-b[sk])*dir||a._i-b._i);
+  document.getElementById('someday').innerHTML=l.map(sdCard).join('');
+  document.querySelectorAll('#sort button').forEach(b=>{const on=b.dataset.k===sk;b.classList.toggle('on',on);b.setAttribute('aria-pressed',on);const s=b.querySelector('span');if(s)s.textContent=on?(dir>0?'↑':'↓'):'';});}
+document.querySelectorAll('#sort button').forEach(b=>b.addEventListener('click',()=>{const k=b.dataset.k;if(k===sk&&k!=='def')dir=-dir;else{sk=k;dir=1}drawSD();}));
+drawSD();
 })();
 </script>
 </body></html>
