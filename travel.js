@@ -11,6 +11,8 @@
     startLbl:()=>{const d=new Date(t.start+'T00:00:00+07:00');return 'เริ่ม '+(String(t.when).startsWith('~')?'~':'')+d.getDate()+' '+M[d.getMonth()]},
     price:()=>String(t.price).replace(/\s*฿.*$/,''),
     peak:()=>t.peak,
+    costFull:()=>'~'+n(t.cost)+' ฿',
+    pp2:()=>'~'+n(Math.round(t.cost/2)),
     total:()=>'~'+n(t.budgetMin)+' – '+n(t.budgetMax)+' ฿',
     pp:()=>'ตกคนละ ~'+n(Math.floor(t.budgetMin/2))+' – '+n(Math.floor(t.budgetMax/2))+' บาท',
   };
