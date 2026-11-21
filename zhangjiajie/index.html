@@ -32,20 +32,20 @@
 .opts b{display:block;font-size:16px}
 </style>
 </head>
-<body>
+<body data-slug="zhangjiajie">
 <nav class="top"><a class="brand" href="../">← Travel</a><span class="muted">2027 · ทริป 4/4</span></nav>
 <header class="hero">
   <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Zhangjiajie_National_Forest_Park_%E5%BC%A0%E5%AE%B6%E7%95%8C%E5%9B%BD%E5%AE%B6%E6%A3%AE%E6%9E%97%E5%85%AC%E5%9B%AD%2C_Hunan%2C_2023_%2852669865292%29.jpg/1920px-Zhangjiajie_National_Forest_Park_%E5%BC%A0%E5%AE%B6%E7%95%8C%E5%9B%BD%E5%AE%B6%E6%A3%AE%E6%9E%97%E5%85%AC%E5%9B%AD%2C_Hunan%2C_2023_%2852669865292%29.jpg" alt="เสาหินจางเจียเจี้ย">
-  <div class="wrap"><div class="kicker">Zhangjiajie · Furong · Fenghuang · ~21 – 27 ต.ค. 2027</div><h1>Avatar Mountains</h1>
+  <div class="wrap"><div class="kicker">Zhangjiajie · Furong · Fenghuang · <span data-t="whenY">~21 – 27 ต.ค. 2027</span></div><h1>Avatar Mountains</h1>
   <p>เสาหินพันต้นในทะเลหมอก บันไดสวรรค์ 999 ขั้น เมืองน้ำตก แล้วไปจบที่ไฟริมแม่น้ำเฟิ่งหวง — วนเป็นวงกลม ไม่ย้อนทางเดิม</p></div>
   <span class="credit">ภาพ: <a href="https://commons.wikimedia.org/wiki/File:Zhangjiajie_National_Forest_Park_张家界国家森林公园,_Hunan,_2023_(52669865292).jpg" target="_blank" rel="noopener">JL Cogburn · CC BY-SA 2.0</a></span>
 </header>
 <main class="wrap">
 <div class="stats">
-  <div><b>7 วัน</b><span>6 คืน · 5 ฐาน</span></div>
-  <div><b>~49k</b><span>บาท · สองคน (ประมาณ)</span></div>
+  <div><b data-t="days">7 วัน</b><span>6 คืน · 5 ฐาน</span></div>
+  <div><b data-t="k">~49k</b><span>บาท · สองคน (ประมาณ)</span></div>
   <div><b>ลา 4 วัน</b><span>Option A</span></div>
-  <div><b><span data-countdown="2027-10-21"></span></b><span>เริ่ม ~21 ต.ค.</span></div>
+  <div><b><span data-t="start" data-countdown="2027-10-21"></span></b><span data-t="startLbl">เริ่ม ~21 ต.ค.</span></div>
 </div>
 <span class="draft">✎ ร่างแพลน · ยังไม่ได้จองอะไร · ตั๋วเครื่องบินยังไม่เปิดขาย</span>
 <div class="route"><span>DMK</span><i>✈ 3 ชม.</i><span>ฉางซา</span><i>🚄 2 ชม.</i><span>อู่หลิงหยวน</span><i>🚗 45 น.</i><span>เมืองจางเจียเจี้ย</span><i>🚄 23 น.</i><span>ฝูหรงเจิ้น</span><i>🚄 35 น.</i><span>เฟิ่งหวง</span><i>🚄 2 ชม.</i><span>ฉางซา</span><i>✈</i><span>DMK</span></div>
@@ -177,6 +177,7 @@
 
 <footer>แพลนร่างจาก Gemini · Claude ตรวจและแก้ · ภาพจาก Wikimedia Commons (เครดิตใต้ภาพ) · ปกคลิปจาก YouTube · <a href="../">กลับหน้ารวมทริป</a></footer>
 </main>
+<script src="../trips.js"></script>
 <script src="../travel.js"></script>
 <script>
 document.querySelectorAll('#checklist input').forEach(c=>{const k='zjj2-'+c.id;try{const v=localStorage.getItem(k);if(v!==null)c.checked=v==='1'}catch(e){}c.addEventListener('change',()=>{try{localStorage.setItem(k,c.checked?'1':'0')}catch(e){}})});

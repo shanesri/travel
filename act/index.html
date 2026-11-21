@@ -19,12 +19,12 @@
 .done{display:inline-block;font-size:13px;background:var(--accent);color:#fff;border-radius:999px;padding:3px 12px;margin-top:14px}
 </style>
 </head>
-<body>
+<body data-slug="act">
 <nav class="top"><a class="brand" href="../">← Travel</a><span class="muted">Previous · 2026</span></nav>
 <header class="hero">
   <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Reflection_of_Tilicho_glacier_on_Tilicho_lake_at_4919_meters.jpg/1920px-Reflection_of_Tilicho_glacier_on_Tilicho_lake_at_4919_meters.jpg" alt="ทะเลสาบ Tilicho 4,919 ม.">
   <div class="wrap">
-    <div class="kicker">Nepal · 6 – 19 เม.ย. 2026 · Shane · Poon · Bew</div>
+    <div class="kicker">Nepal · <span data-t="whenY">6 – 19 เม.ย. 2026</span> · Shane · Poon · Bew</div>
     <h1>Thin Air</h1>
     <p>Annapurna Circuit + ทะเลสาบ Tilicho — 14 วันเดินจากป่าสนขึ้นไปถึงช่องเขา Thorong La 5,416 ม. ออกซิเจนเหลือครึ่งเดียว แต่วิวเต็มร้อย</p>
   </div>
@@ -32,7 +32,7 @@
 </header>
 <main class="wrap">
 <div class="stats">
-  <div><b>14 วัน</b><span>6–19 เม.ย. 2026</span></div>
+  <div><b data-t="days">14 วัน</b><span>6–19 เม.ย. 2026</span></div>
   <div><b>5,416 ม.</b><span>Thorong La Pass</span></div>
   <div><b>~160 กม.</b><span>เดินรวม</span></div>
   <div><b>~54k</b><span>บาท · ต่อคน</span></div>
@@ -154,6 +154,7 @@
 
 <footer>ภาพจาก Wikimedia Commons (เครดิตใต้ภาพ) · <a href="../">กลับหน้ารวมทริป</a></footer>
 </main>
+<script src="../trips.js"></script>
 <script src="../travel.js"></script>
 <script>
 document.querySelectorAll('#checklist input').forEach(c=>{const k='act-'+c.id;try{c.checked=localStorage.getItem(k)==='1'}catch(e){}c.addEventListener('change',()=>{try{localStorage.setItem(k,c.checked?'1':'0')}catch(e){}})});

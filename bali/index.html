@@ -31,20 +31,20 @@
 .opts b{display:block;font-size:16px}
 </style>
 </head>
-<body>
+<body data-slug="bali">
 <nav class="top"><a class="brand" href="../">← Travel</a><span class="muted">2027 · ทริป 3/4</span></nav>
 <header class="hero">
   <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Ile_de_Menjangan.jpg/1920px-Ile_de_Menjangan.jpg" alt="เกาะเมินจางัน">
-  <div class="wrap"><div class="kicker">Lovina · Pemuteran · Menjangan · ~17 – 21 ก.ค. 2027</div><h1>Dolphins at Dawn</h1>
+  <div class="wrap"><div class="kicker">Lovina · Pemuteran · Menjangan · <span data-t="whenY">~17 – 21 ก.ค. 2027</span></div><h1>Dolphins at Dawn</h1>
   <p>ออกเรือตอนฟ้าสางไปลอยตัวข้างฝูงโลมา ดำกำแพงปะการังที่น้ำใสที่สุดของบาหลี ดำน้ำทุกวัน แล้วปิดทริปเดินกินในเมืองเซมินยัค — ทริปที่ปุ่นเลือก</p></div>
   <span class="credit">ภาพ: <a href="https://commons.wikimedia.org/wiki/File:Ile_de_Menjangan.jpg" target="_blank" rel="noopener">Eric Bajart · CC BY-SA 3.0</a></span>
 </header>
 <main class="wrap">
 <div class="stats">
-  <div><b>5 วัน</b><span>4 คืน · 3 ฐาน</span></div>
-  <div><b>~42k</b><span>บาท · สองคน (ประมาณ)</span></div>
+  <div><b data-t="days">5 วัน</b><span>4 คืน · 3 ฐาน</span></div>
+  <div><b data-t="k">~42k</b><span>บาท · สองคน (ประมาณ)</span></div>
   <div><b>ลา 2 วัน</b><span>Option A</span></div>
-  <div><b><span data-countdown="2027-07-17"></span></b><span>เริ่ม ~17 ก.ค.</span></div>
+  <div><b><span data-t="start" data-countdown="2027-07-17"></span></b><span data-t="startLbl">เริ่ม ~17 ก.ค.</span></div>
 </div>
 <span class="draft">✎ ร่างแพลน · ยังไม่ได้จองอะไร</span>
 <div class="route"><span>DMK</span><i>✈ 4 ชม.</i><span>เดนปาซาร์</span><i>🚐 3 ชม.</i><span>ลอวีนา</span><i>🚐 1 ชม.</i><span>เปอมูเตรัน</span><i>🚐 4 ชม.</i><span>เซมินยัค</span><i>🚕 20–60 น.</i><span>สนามบิน</span></div>
@@ -146,6 +146,7 @@
 
 <footer>แพลนร่างจาก Gemini · Claude ตรวจและแก้ · ภาพจาก Wikimedia Commons (กดเครดิตใต้ภาพเพื่อดูผู้ถ่ายและสัญญาอนุญาต) · ปกคลิปจาก YouTube · <a href="../">กลับหน้ารวมทริป</a></footer>
 </main>
+<script src="../trips.js"></script>
 <script src="../travel.js"></script>
 <script>
 document.querySelectorAll('#checklist input').forEach(c=>{const k='bali-'+c.id;try{const v=localStorage.getItem(k);if(v!==null)c.checked=v==='1'}catch(e){}c.addEventListener('change',()=>{try{localStorage.setItem(k,c.checked?'1':'0')}catch(e){}})});

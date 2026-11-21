@@ -29,20 +29,20 @@
 .food figcaption{padding:10px 14px}
 </style>
 </head>
-<body>
+<body data-slug="philippines">
 <nav class="top"><a class="brand" href="../">← Travel</a><span class="muted">2027 · ทริป 2/4</span></nav>
 <header class="hero">
   <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/2014_11_Moalboal_21_sardine_run_%2816024303526%29.jpg/1920px-2014_11_Moalboal_21_sardine_run_%2816024303526%29.jpg" alt="ฝูงซาร์ดีนที่โมอัลโบอัล">
-  <div class="wrap"><div class="kicker">Moalboal + Panglao · 10 – 17 เม.ย. 2027</div><h1>Blue Hours</h1>
+  <div class="wrap"><div class="kicker">Moalboal + Panglao · <span data-t="whenY">10 – 17 เม.ย. 2027</span></div><h1>Blue Hours</h1>
   <p>ฟรีไดฟ์กลางฝูงซาร์ดีนล้านตัวหน้าหาดโมอัลโบอัล แล้วข้ามไปว่ายกับเต่าที่บาลิคาซัก — คร่อมสงกรานต์ ลาแค่ 2 วัน</p></div>
   <span class="credit">ภาพ: <a href="https://commons.wikimedia.org/wiki/File:2014_11_Moalboal_21_sardine_run_(16024303526).jpg" target="_blank" rel="noopener">Lakshmi Sawitri · CC BY 2.0</a></span>
 </header>
 <main class="wrap">
 <div class="stats">
-  <div><b>8 วัน</b><span>6 คืน + ไฟลต์ดึก</span></div>
-  <div><b>~50k</b><span>บาท · สองคน</span></div>
+  <div><b data-t="days">8 วัน</b><span>6 คืน + ไฟลต์ดึก</span></div>
+  <div><b data-t="k">~50k</b><span>บาท · สองคน</span></div>
   <div><b>5 วัน</b><span>ได้ลงน้ำ</span></div>
-  <div><b><span data-countdown="2027-04-10"></span></b><span>เริ่ม 10 เม.ย.</span></div>
+  <div><b><span data-t="start" data-countdown="2027-04-10"></span></b><span data-t="startLbl">เริ่ม 10 เม.ย.</span></div>
 </div>
 <div class="route"><span>ดอนเมือง</span><i>✈</i><span>เซบู</span><i>🚐 3 ชม.</i><span>โมอัลโบอัล</span><i>🚐 + ⛴ 5 ชม.</i><span>ปังเลา</span><i>⛴ 2 ชม.</i><span>เซบู</span><i>✈</i><span>ดอนเมือง</span></div>
 <div class="tools">
@@ -155,6 +155,7 @@
 
 <footer>ภาพสถานที่และอาหารจาก Wikimedia Commons (เครดิตใต้ภาพ) · ปกคลิปจาก YouTube ของเจ้าของคลิป · <a href="../">กลับหน้ารวมทริป</a></footer>
 </main>
+<script src="../trips.js"></script>
 <script src="../travel.js"></script>
 <script>
 document.querySelectorAll('#checklist input').forEach(c=>{const k='ph-'+c.id;try{const v=localStorage.getItem(k);if(v!==null)c.checked=v==='1'}catch(e){}c.addEventListener('change',()=>{try{localStorage.setItem(k,c.checked?'1':'0')}catch(e){}})});

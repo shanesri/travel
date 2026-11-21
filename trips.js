@@ -9,7 +9,7 @@ const T='https://thumb.wikimedia.org/wikipedia/commons/thumb/';
 window.TRIPS=[
  {slug:'act',year:2026,name:'Thin Air',place:'Annapurna Circuit + Tilicho',country:'เนปาล',start:'2026-04-06',end:'2026-04-19',when:'6 – 19 เม.ย. 2026',days:14,cost:108000,price:'~54k ฿ ต่อคน',tags:['เทรค 5,416 ม.','Thorong La','ทะเลสาบ Tilicho'],
   img:T+'4/47/Reflection_of_Tilicho_glacier_on_Tilicho_lake_at_4919_meters.jpg/1280px-Reflection_of_Tilicho_glacier_on_Tilicho_lake_at_4919_meters.jpg'},
- {slug:'sichuan',year:2027,name:'Snow & Spice',place:'เฉิงตู · ง้อไบ๊ · เล่อซาน · ชิงเฉิงซาน',country:'จีน',start:'2026-12-31',end:'2027-01-06',when:'31 ธ.ค. – 6 ม.ค.',days:7,cost:43000,price:'~43k ฿ สองคน',status:'จองครบ',tags:['เคาท์ดาวน์','เดินเขาหิมะ','พระใหญ่','หม่าล่า'],
+ {slug:'sichuan',year:2027,name:'Snow & Spice',place:'เฉิงตู · ง้อไบ๊ · เล่อซาน · ชิงเฉิงซาน',country:'จีน',start:'2026-12-31',end:'2027-01-06',when:'31 ธ.ค. 2026 – 6 ม.ค. 2027',days:7,cost:43000,price:'~43k ฿ สองคน',status:'จองครบ',tags:['เคาท์ดาวน์','เดินเขาหิมะ','พระใหญ่','หม่าล่า'],
   img:T+'4/4f/Golden_Summit_%28Jinding%29_%2817264931860%29.jpg/1280px-Golden_Summit_%28Jinding%29_%2817264931860%29.jpg'},
  {slug:'philippines',name:'Blue Hours',year:2027,place:'โมอัลโบอัล + ปังเลา',country:'ฟิลิปปินส์',start:'2027-04-10',end:'2027-04-17',when:'10 – 17 เม.ย.',days:8,cost:50000,price:'~50k ฿ สองคน',status:'แพลนแล้ว · ยังไม่จอง',tags:['ฟรีไดฟ์','ซาร์ดีน','เต่า'],
   img:T+'0/00/2014_11_Moalboal_21_sardine_run_%2816024303526%29.jpg/1280px-2014_11_Moalboal_21_sardine_run_%2816024303526%29.jpg'},
