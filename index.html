@@ -14,7 +14,7 @@
 .intro h1{font-size:clamp(52px,12vw,96px);font-style:italic;font-weight:500}
 .intro p{font-size:18px;max-width:560px;color:var(--soft);margin:10px 0 0}
 /* year block */
-.year{margin-top:44px}
+.year{margin-top:4px}
 .yhead{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 18px;border-bottom:1px solid var(--line);padding-bottom:10px}
 .yhead h3{font-size:clamp(40px,8vw,60px);font-style:italic;font-weight:500;line-height:1}
 .yhead .sum{font-size:15px;color:var(--soft)}
@@ -46,6 +46,17 @@ a.trip:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(60,40,20,.10
 .idea .peak{font-size:14px;color:var(--accent);margin-top:8px;font-weight:500}
 .idea .cred{display:block;font-size:11px;color:var(--soft);margin-top:8px;text-decoration:none}
 .idea h4{font-size:24px}
+details.grp{border-top:1px solid var(--line);margin-top:28px}
+details.grp:first-child{margin-top:44px}
+details.grp>summary{list-style:none;cursor:pointer;display:flex;align-items:baseline;gap:10px;padding:18px 0 6px;user-select:none}
+details.grp>summary::-webkit-details-marker{display:none}
+details.grp>summary h3{font-size:clamp(34px,7vw,52px);font-style:italic;font-weight:500;line-height:1;margin:0}
+details.grp>summary .cnt{color:var(--soft);font-size:18px}
+details.grp>summary .arr{margin-left:auto;color:var(--accent);font-size:22px;line-height:1}
+details.grp>summary .arr::before{content:"▸"}
+details.grp[open]>summary .arr::before{content:"▾"}
+details.grp>summary .sub{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600}
+details.grp>.gbody{padding-bottom:8px}
 .sec-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px}
 .sort{display:flex;gap:6px;flex-wrap:wrap}
 .sort button{font:inherit;font-size:13px;padding:4px 11px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
@@ -67,15 +78,9 @@ a.idea{text-decoration:none;color:inherit}
   <p>แพลนเที่ยวแต่ละปี เปิดดูตอนเดินทาง หรือลอกรูทไปเที่ยวตามได้เลย</p>
 </section>
 
-<div class="sec">Upcoming</div>
-<div id="upcoming"></div>
-
-<div class="sec">Previous</div>
-<div id="previous"></div>
-
-<div class="sec-row"><div class="sec">Someday</div><div class="sort" id="sort" role="group" aria-label="เรียงลำดับ"><button type="button" data-k="def" class="on">ค่าเริ่มต้น</button><button type="button" data-k="budgetMin">เรียงตามงบ <span></span></button><button type="button" data-k="daysMin">เรียงตามวัน <span></span></button></div></div>
-<p class="muted" style="margin:6px 0 0">อยากไป แต่ยังไม่ลงปี · งบเป็นสองคน All-in โดยประมาณ</p>
-<div class="grid" id="someday"></div>
+<div id="groups"></div>
+<template id="sd-body"><div class="sec-row"><p class="muted" style="margin:0">อยากไป แต่ยังไม่ลงปี · งบเป็นสองคน All-in โดยประมาณ</p><div class="sort" id="sort" role="group" aria-label="เรียงลำดับ"><button type="button" data-k="def" class="on">ค่าเริ่มต้น</button><button type="button" data-k="budgetMin">เรียงตามงบ <span></span></button><button type="button" data-k="daysMin">เรียงตามวัน <span></span></button></div></div>
+<div class="grid" id="someday"></div></template>
 
 <noscript><p>เปิด JavaScript เพื่อดูรายการทริป</p></noscript>
 <footer>ภาพจาก Wikimedia Commons (เครดิตอยู่ในหน้าแต่ละทริป) · หน้านี้ไม่ได้เปิดให้ Google ค้นเจอ · เพิ่มทริปใหม่ได้ที่ไฟล์ trips.js</footer>
@@ -102,16 +107,19 @@ function yearBlock(y,list,all){
   const countries=[...new Set(yl.map(t=>t.country))].length;
   const bar=yl.map((t,i)=>`<span style="width:${t.cost/cost*100}%;background:${COL[i%COL.length]}" title="${esc(t.name)}"></span>`).join('');
   const leg=yl.map((t,i)=>`<span><i style="background:${COL[i%COL.length]}"></i>${esc(t.name)} ${fmtK(t.cost)}</span>`).join('');
-  return `<section class="year" data-year="${y}"><div class="yhead"><h3>${y}</h3><div class="sum"><b>${yl.length}</b> ทริป · <b>${days}</b> วัน · <b>${countries}</b> ประเทศ · งบ <b>${fmtK(cost)} ฿</b> สองคน</div></div>
+  return `<section class="year" data-year="${y}"><div class="yhead"><div class="sum"><b>${yl.length}</b> ทริป · <b>${days}</b> วัน · <b>${countries}</b> ประเทศ · งบ <b>${fmtK(cost)} ฿</b> สองคน</div></div>
   <div class="ybar">${bar}</div><div class="ylegend">${leg}</div>
   <div class="grid">${list.map(card).join('')}</div></section>`;}
-const done=trips.filter(isPast);
+const done=trips.filter(isPast).sort((x,y)=>d(y.start)-d(x.start));
 const up=trips.filter(t=>!isPast(t));
-const years=[...new Set(trips.map(t=>t.year))].sort();
-const upYears=years.filter(y=>up.some(t=>t.year===y));
-const pastYears=years.filter(y=>done.some(t=>t.year===y)).reverse();
-document.getElementById('upcoming').innerHTML=upYears.map(y=>yearBlock(y,up.filter(t=>t.year===y),trips)).join('')||'<p class="empty">ยังไม่มีทริปข้างหน้า</p>';
-document.getElementById('previous').innerHTML=pastYears.map(y=>yearBlock(y,done.filter(t=>t.year===y),trips)).join('')||'<p class="empty">ยังไม่มีทริปที่ไปมาแล้ว</p>';
+const upYears=[...new Set(up.map(t=>t.year))].sort();
+const CY=new Date().getFullYear();
+const openYear=upYears.includes(CY)?CY:upYears[0];
+const grp=(id,title,sub,n,body,open)=>`<details class="grp" id="${id}"${open?' open':''}><summary><h3>${esc(title)}</h3><span class="cnt">(${n})</span>${sub?`<span class="sub">${esc(sub)}</span>`:''}<span class="arr" aria-hidden="true"></span></summary><div class="gbody">${body}</div></details>`;
+let html=upYears.map(y=>{const l=up.filter(t=>t.year===y);return grp('y'+y,String(y),'Upcoming',l.length,yearBlock(y,l,trips),y===openYear)}).join('');
+html+=grp('previous','Previous','',done.length,done.length?`<div class="grid">${done.map(card).join('')}</div>`:'<p class="empty">ยังไม่มีทริปที่ไปมาแล้ว</p>',false);
+html+=grp('someday-g','Someday','',window.SOMEDAY.length,document.getElementById('sd-body').innerHTML,false);
+document.getElementById('groups').innerHTML=html;
 // someday
 const SD=window.SOMEDAY.map((x,i)=>({...x,_i:i}));
 const sdCard=x=>`<a class="trip idea" href="${x.slug}/"><div class="pic"><img loading="lazy" src="${x.img}" alt=""><span class="flag">${esc(x.country)}</span></div><div class="meta"><div class="when">${esc(x.days)}</div><h4>${esc(x.name)}</h4><p class="note">${esc(x.note)}</p><div class="peak">🗓 ช่วงพีค: ${esc(x.peak)}</div><div class="foot"><span class="price">${esc(x.price)}</span><span class="st">สองคน</span></div><span class="cred">ภาพ: ${esc(x.credit)} · Wikimedia Commons</span></div></a>`;
