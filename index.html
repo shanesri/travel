@@ -62,30 +62,27 @@ details.grp>.gbody{padding-bottom:8px}
 .sort button{font:inherit;font-size:13px;padding:4px 11px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
 .sort button.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
 .sort button span{font-weight:600}
-/* someday timeline */
-.tl{margin-top:16px}
-.tl-hint{font-size:13px;color:var(--soft);margin:0 0 10px}
-.tl-row{display:grid;grid-template-columns:minmax(118px,1.4fr) repeat(12,minmax(0,1fr));align-items:center;column-gap:2px}
-.tl-head{position:sticky;top:0;background:var(--paper);z-index:2;padding:4px 0 6px;border-bottom:1px solid var(--line)}
-.tl-head button{font:inherit;font-size:12px;line-height:1.2;padding:4px 0;border:1px solid transparent;border-radius:8px;background:none;color:var(--ink);cursor:pointer;text-align:center}
-.tl-head button small{display:block;font-size:10px;color:var(--soft)}
-.tl-head button.on{background:var(--ink);color:var(--paper)}.tl-head button.on small{color:var(--paper)}
-.tl-head .all{font-size:12px;color:var(--accent);text-align:left;padding-left:0}
-.tl-plan>*{min-width:0}.tl-plan{font-size:10px;color:var(--soft);padding:4px 0;border-bottom:1px solid var(--line)}
-.tl-plan>span:first-child{font-size:11px}
-.tl-plan i{display:block;font-style:normal;font-size:9px;background:var(--accent);color:#fff;border-radius:4px;padding:1px 2px;margin:1px 0;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.tl-trip{padding:5px 0;border-bottom:1px solid var(--line)}
-.tl-trip a{color:var(--ink);text-decoration:none;font-size:13px;line-height:1.25;display:block;padding-right:6px}
-.tl-trip a small{display:block;color:var(--soft);font-size:11px}
-.tl-trip a:hover b{text-decoration:underline}
-.tl-trip b{font-weight:500}
-.tl-c{height:14px;border-radius:2px}
-.tl-c.on{background:var(--accent);opacity:.75}
-.tl-c.sel{box-shadow:inset 0 0 0 2px var(--ink)}
-.tl-col{background:rgba(120,100,70,.07)}
-.tl-sum{font-size:14px;margin:0 0 10px}
-.tl-sum b{font-weight:600}
-@media(max-width:480px){.tl-row{grid-template-columns:104px repeat(12,1fr)}.tl-head button{font-size:10px}.tl-trip a{font-size:12px}}
+/* someday by quarter */
+.qb{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:16px}
+.qb-hint{grid-column:1/-1;font-size:13px;color:var(--soft);margin:0}
+.q{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 14px 8px;min-width:0}
+.q h5{font-family:var(--serif);font-style:italic;font-weight:500;font-size:24px;margin:0;line-height:1.1}
+.q h5 small{font-family:inherit;font-style:normal;font-size:13px;color:var(--soft);margin-left:6px}
+.q .pl{font-size:12px;margin:8px 0 4px;color:var(--soft)}
+.q .pl i{font-style:normal;display:inline-block;background:var(--accent);color:#fff;border-radius:999px;padding:1px 8px;margin:2px 4px 0 0;font-size:11px}
+.q .pl .free{color:var(--accent);font-weight:600}
+.q ul{list-style:none;padding:0;margin:6px 0 0}
+.q li{border-top:1px solid var(--line)}
+.q li a{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 8px;align-items:center;padding:8px 0;color:var(--ink);text-decoration:none}
+.q li a:hover b{text-decoration:underline}
+.q li b{font-weight:500;font-size:14px;line-height:1.3}
+.q li small{grid-column:1/-1;font-size:12px;color:var(--soft)}
+.q .dots{display:flex;gap:3px}
+.q .dots span{width:22px;height:16px;border-radius:4px;font-size:9px;line-height:16px;text-align:center;background:var(--paper);border:1px solid var(--line);color:var(--soft)}
+.q .dots span.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.q li.part b{color:var(--soft)}
+@media(max-width:1000px){.qb{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.qb{grid-template-columns:minmax(0,1fr)}}
 a.idea{text-decoration:none;color:inherit}
 .idea .cred{pointer-events:none}
 
@@ -103,7 +100,7 @@ a.idea{text-decoration:none;color:inherit}
 </section>
 
 <div id="groups"></div>
-<template id="sd-body"><div class="sec-row"><p class="muted" style="margin:0">อยากไป แต่ยังไม่ลงปี · งบเป็นสองคน All-in โดยประมาณ</p><div class="sort" id="sort" role="group" aria-label="เรียงลำดับ"><button type="button" data-k="def" class="on">ค่าเริ่มต้น</button><button type="button" data-k="budgetMin">เรียงตามงบ <span></span></button><button type="button" data-k="tl">📅 ไทม์ไลน์</button></div></div>
+<template id="sd-body"><div class="sec-row"><p class="muted" style="margin:0">อยากไป แต่ยังไม่ลงปี · งบเป็นสองคน All-in โดยประมาณ</p><div class="sort" id="sort" role="group" aria-label="เรียงลำดับ"><button type="button" data-k="def" class="on">ค่าเริ่มต้น</button><button type="button" data-k="budgetMin">เรียงตามงบ <span></span></button><button type="button" data-k="tl">📅 ไปช่วงไหนดี</button></div></div>
 <div class="grid" id="someday"></div></template>
 
 <noscript><p>เปิด JavaScript เพื่อดูรายการทริป</p></noscript>
@@ -147,25 +144,24 @@ document.getElementById('groups').innerHTML=html;
 // someday
 const SD=window.SOMEDAY.map((x,i)=>({...x,_i:i}));
 const sdCard=x=>`<a class="trip idea" href="${x.slug}/"><div class="pic"><img loading="lazy" src="${x.img}" alt=""><span class="flag">${esc(x.country)}</span></div><div class="meta"><div class="when">${esc(x.days)}</div><h4>${esc(x.name)}</h4><p class="note">${esc(x.note)}</p><div class="peak">🗓 ช่วงพีค: ${esc(x.peak)}</div><div class="foot"><span class="price">${esc(x.price)}</span><span class="st">สองคน</span></div><span class="cred">ภาพ: ${esc(x.credit)} · Wikimedia Commons</span></div></a>`;
-let sk='def',dir=1,selM=0;
+let sk='def',dir=1;
 const MN=['ม.ค.','ก.พ.','มี.ค.','เม.ย.','พ.ค.','มิ.ย.','ก.ค.','ส.ค.','ก.ย.','ต.ค.','พ.ย.','ธ.ค.'];
-// months already taken by upcoming dated trips
-const planned=Array.from({length:13},()=>[]);
+// quarters already taken by upcoming dated trips
+const QS=[[1,2,3],[4,5,6],[7,8,9],[10,11,12]];
+const planned=[[],[],[],[]];
 up.forEach(t=>{const a=new Date(t.start+'T00:00:00'),b=new Date((t.end||t.start)+'T00:00:00');const seen=new Set();
-  for(let x=new Date(a.getFullYear(),a.getMonth(),1);x<=b;x.setMonth(x.getMonth()+1)){const m=x.getMonth()+1;if(seen.has(m))continue;seen.add(m);planned[m].push({n:t.name,c:t.country,y:x.getFullYear()});}});
-const seasonStart=x=>{const ms=x.months||[];if(ms.length>=12)return 0;for(const m of ms){const p=m===1?12:m-1;if(!ms.includes(p))return m;}return ms[0]||13;};
+  for(let x=new Date(a.getFullYear(),a.getMonth(),1);x<=b;x.setMonth(x.getMonth()+1)){const q=Math.floor(x.getMonth()/3),k=q+'-'+x.getFullYear();if(seen.has(k))continue;seen.add(k);planned[q].push({c:t.country,n:t.name,y:x.getFullYear()});}});
 function drawTL(){
-  const el=document.getElementById('someday');el.className='tl';
-  let l=SD.filter(x=>!selM||(x.months||[]).includes(selM));
-  l.sort(selM?(a,b)=>a.budgetMin-b.budgetMin:(a,b)=>seasonStart(a)-seasonStart(b)||a.daysMin-b.daysMin);
-  const cnt=m=>SD.filter(x=>(x.months||[]).includes(m)).length;
-  let h=`<p class="tl-hint">แถบสี = ช่วงที่เหมาะจะไป · แตะชื่อเดือนเพื่อดูว่าเดือนนั้นไปทริปไหนได้ · แถวบนสุดคือเดือนที่มีทริปลงแพลนแล้ว</p>`;
-  if(selM){const pl=planned[selM];h+=`<p class="tl-sum"><b>${MN[selM-1]}</b> ไปได้ ${l.length} ทริป (เรียงงบน้อย → มาก)${pl.length?` · แพลนแล้ว: ${pl.map(p=>esc(p.n)+' ('+esc(p.c)+' '+p.y+')').join(', ')}`:' · ยังว่าง'}</p>`;}
-  h+=`<div class="tl-row tl-head"><button type="button" class="all" data-m="0">${selM?'← ทุกเดือน':'เดือน'}</button>${MN.map((n,i)=>`<button type="button" data-m="${i+1}" class="${selM===i+1?'on':''}" aria-pressed="${selM===i+1}">${n.replace('.','').replace('.','')}<small>${cnt(i+1)}</small></button>`).join('')}</div>`;
-  h+=`<div class="tl-row tl-plan"><span>แพลนแล้ว</span>${MN.map((n,i)=>`<span class="${selM===i+1?'tl-col':''}">${planned[i+1].map(p=>`<i title="${esc(p.n)} · ${esc(p.c)} ${p.y}">${esc(p.c)} ’${String(p.y).slice(2)}</i>`).join('')}</span>`).join('')}</div>`;
-  h+=l.map(x=>{const ms=x.months||[];return `<div class="tl-row tl-trip"><a href="${x.slug}/"><b>${esc(x.name.split(' · ')[0])}</b><small>${esc(x.days)} · ${fmtK(x.budgetMin)}</small></a>${MN.map((n,i)=>`<span class="tl-c${ms.includes(i+1)?' on':''}${selM===i+1?' tl-col':''}" title="${n}"></span>`).join('')}</div>`;}).join('');
-  el.innerHTML=h;
-  el.querySelectorAll('.tl-head button').forEach(b=>b.addEventListener('click',()=>{const m=+b.dataset.m;selM=(m===selM)?0:m;drawTL();}));}
+  const el=document.getElementById('someday');el.className='qb';
+  let h='<p class="qb-hint">ทริปที่ช่วงพีคตกอยู่ในแต่ละไตรมาส · ช่องสีแดง = เดือนที่เหมาะ · ทริปที่พีคเต็มไตรมาสขึ้นก่อน แล้วเรียงตามงบ · ป้ายแดงบนหัว = ไตรมาสที่มีทริปลงปีไว้แล้ว</p>';
+  QS.forEach((q,qi)=>{
+    const l=SD.map(x=>({x,n:q.filter(m=>(x.months||[]).includes(m)).length})).filter(o=>o.n>0)
+      .sort((a,b)=>(b.n>=2)-(a.n>=2)||a.x.budgetMin-b.x.budgetMin);
+    const pl=planned[qi].sort((a,b)=>a.y-b.y);
+    h+=`<section class="q"><h5>${MN[q[0]-1]} – ${MN[q[2]-1]}<small>${l.length} ทริป</small></h5>
+    <div class="pl">${pl.length?'แพลนแล้ว '+pl.map(p=>`<i title="${esc(p.n)}">${esc(p.c)} ${p.y}</i>`).join(''):'<span class="free">ยังไม่มีทริปลงปี</span>'}</div><ul>`+
+    l.map(({x,n})=>`<li class="${n>=2?'':'part'}"><a href="${x.slug}/"><b>${esc(x.name.split(' · ')[0])}</b><span class="dots">${q.map(m=>`<span class="${(x.months||[]).includes(m)?'on':''}">${MN[m-1].replace(/\./g,'')}</span>`).join('')}</span><small>${esc(x.days)} · ${fmtK(x.budgetMin)} ฿ · พีค ${esc(x.peak)}</small></a></li>`).join('')+'</ul></section>';});
+  el.innerHTML=h;}
 function drawSD(){
   document.querySelectorAll('#sort button').forEach(b=>{const on=b.dataset.k===sk;b.classList.toggle('on',on);b.setAttribute('aria-pressed',on);const s=b.querySelector('span');if(s)s.textContent=on?(dir>0?'↑':'↓'):'';});
   if(sk==='tl')return drawTL();
