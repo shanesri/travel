@@ -62,6 +62,30 @@ details.grp>.gbody{padding-bottom:8px}
 .sort button{font:inherit;font-size:13px;padding:4px 11px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
 .sort button.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
 .sort button span{font-weight:600}
+/* someday timeline */
+.tl{margin-top:16px}
+.tl-hint{font-size:13px;color:var(--soft);margin:0 0 10px}
+.tl-row{display:grid;grid-template-columns:minmax(118px,1.4fr) repeat(12,minmax(0,1fr));align-items:center;column-gap:2px}
+.tl-head{position:sticky;top:0;background:var(--paper);z-index:2;padding:4px 0 6px;border-bottom:1px solid var(--line)}
+.tl-head button{font:inherit;font-size:12px;line-height:1.2;padding:4px 0;border:1px solid transparent;border-radius:8px;background:none;color:var(--ink);cursor:pointer;text-align:center}
+.tl-head button small{display:block;font-size:10px;color:var(--soft)}
+.tl-head button.on{background:var(--ink);color:var(--paper)}.tl-head button.on small{color:var(--paper)}
+.tl-head .all{font-size:12px;color:var(--accent);text-align:left;padding-left:0}
+.tl-plan>*{min-width:0}.tl-plan{font-size:10px;color:var(--soft);padding:4px 0;border-bottom:1px solid var(--line)}
+.tl-plan>span:first-child{font-size:11px}
+.tl-plan i{display:block;font-style:normal;font-size:9px;background:var(--accent);color:#fff;border-radius:4px;padding:1px 2px;margin:1px 0;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tl-trip{padding:5px 0;border-bottom:1px solid var(--line)}
+.tl-trip a{color:var(--ink);text-decoration:none;font-size:13px;line-height:1.25;display:block;padding-right:6px}
+.tl-trip a small{display:block;color:var(--soft);font-size:11px}
+.tl-trip a:hover b{text-decoration:underline}
+.tl-trip b{font-weight:500}
+.tl-c{height:14px;border-radius:2px}
+.tl-c.on{background:var(--accent);opacity:.75}
+.tl-c.sel{box-shadow:inset 0 0 0 2px var(--ink)}
+.tl-col{background:rgba(120,100,70,.07)}
+.tl-sum{font-size:14px;margin:0 0 10px}
+.tl-sum b{font-weight:600}
+@media(max-width:480px){.tl-row{grid-template-columns:104px repeat(12,1fr)}.tl-head button{font-size:10px}.tl-trip a{font-size:12px}}
 a.idea{text-decoration:none;color:inherit}
 .idea .cred{pointer-events:none}
 
@@ -79,7 +103,7 @@ a.idea{text-decoration:none;color:inherit}
 </section>
 
 <div id="groups"></div>
-<template id="sd-body"><div class="sec-row"><p class="muted" style="margin:0">อยากไป แต่ยังไม่ลงปี · งบเป็นสองคน All-in โดยประมาณ</p><div class="sort" id="sort" role="group" aria-label="เรียงลำดับ"><button type="button" data-k="def" class="on">ค่าเริ่มต้น</button><button type="button" data-k="budgetMin">เรียงตามงบ <span></span></button><button type="button" data-k="daysMin">เรียงตามวัน <span></span></button></div></div>
+<template id="sd-body"><div class="sec-row"><p class="muted" style="margin:0">อยากไป แต่ยังไม่ลงปี · งบเป็นสองคน All-in โดยประมาณ</p><div class="sort" id="sort" role="group" aria-label="เรียงลำดับ"><button type="button" data-k="def" class="on">ค่าเริ่มต้น</button><button type="button" data-k="budgetMin">เรียงตามงบ <span></span></button><button type="button" data-k="tl">📅 ไทม์ไลน์</button></div></div>
 <div class="grid" id="someday"></div></template>
 
 <noscript><p>เปิด JavaScript เพื่อดูรายการทริป</p></noscript>
@@ -123,11 +147,32 @@ document.getElementById('groups').innerHTML=html;
 // someday
 const SD=window.SOMEDAY.map((x,i)=>({...x,_i:i}));
 const sdCard=x=>`<a class="trip idea" href="${x.slug}/"><div class="pic"><img loading="lazy" src="${x.img}" alt=""><span class="flag">${esc(x.country)}</span></div><div class="meta"><div class="when">${esc(x.days)}</div><h4>${esc(x.name)}</h4><p class="note">${esc(x.note)}</p><div class="peak">🗓 ช่วงพีค: ${esc(x.peak)}</div><div class="foot"><span class="price">${esc(x.price)}</span><span class="st">สองคน</span></div><span class="cred">ภาพ: ${esc(x.credit)} · Wikimedia Commons</span></div></a>`;
-let sk='def',dir=1;
-function drawSD(){const l=[...SD].sort(sk==='def'?(a,b)=>a._i-b._i:(a,b)=>(a[sk]-b[sk])*dir||a._i-b._i);
-  document.getElementById('someday').innerHTML=l.map(sdCard).join('');
-  document.querySelectorAll('#sort button').forEach(b=>{const on=b.dataset.k===sk;b.classList.toggle('on',on);b.setAttribute('aria-pressed',on);const s=b.querySelector('span');if(s)s.textContent=on?(dir>0?'↑':'↓'):'';});}
-document.querySelectorAll('#sort button').forEach(b=>b.addEventListener('click',()=>{const k=b.dataset.k;if(k===sk&&k!=='def')dir=-dir;else{sk=k;dir=1}drawSD();}));
+let sk='def',dir=1,selM=0;
+const MN=['ม.ค.','ก.พ.','มี.ค.','เม.ย.','พ.ค.','มิ.ย.','ก.ค.','ส.ค.','ก.ย.','ต.ค.','พ.ย.','ธ.ค.'];
+// months already taken by upcoming dated trips
+const planned=Array.from({length:13},()=>[]);
+up.forEach(t=>{const a=new Date(t.start+'T00:00:00'),b=new Date((t.end||t.start)+'T00:00:00');const seen=new Set();
+  for(let x=new Date(a.getFullYear(),a.getMonth(),1);x<=b;x.setMonth(x.getMonth()+1)){const m=x.getMonth()+1;if(seen.has(m))continue;seen.add(m);planned[m].push({n:t.name,c:t.country,y:x.getFullYear()});}});
+const seasonStart=x=>{const ms=x.months||[];if(ms.length>=12)return 0;for(const m of ms){const p=m===1?12:m-1;if(!ms.includes(p))return m;}return ms[0]||13;};
+function drawTL(){
+  const el=document.getElementById('someday');el.className='tl';
+  let l=SD.filter(x=>!selM||(x.months||[]).includes(selM));
+  l.sort(selM?(a,b)=>a.budgetMin-b.budgetMin:(a,b)=>seasonStart(a)-seasonStart(b)||a.daysMin-b.daysMin);
+  const cnt=m=>SD.filter(x=>(x.months||[]).includes(m)).length;
+  let h=`<p class="tl-hint">แถบสี = ช่วงที่เหมาะจะไป · แตะชื่อเดือนเพื่อดูว่าเดือนนั้นไปทริปไหนได้ · แถวบนสุดคือเดือนที่มีทริปลงแพลนแล้ว</p>`;
+  if(selM){const pl=planned[selM];h+=`<p class="tl-sum"><b>${MN[selM-1]}</b> ไปได้ ${l.length} ทริป (เรียงงบน้อย → มาก)${pl.length?` · แพลนแล้ว: ${pl.map(p=>esc(p.n)+' ('+esc(p.c)+' '+p.y+')').join(', ')}`:' · ยังว่าง'}</p>`;}
+  h+=`<div class="tl-row tl-head"><button type="button" class="all" data-m="0">${selM?'← ทุกเดือน':'เดือน'}</button>${MN.map((n,i)=>`<button type="button" data-m="${i+1}" class="${selM===i+1?'on':''}" aria-pressed="${selM===i+1}">${n.replace('.','').replace('.','')}<small>${cnt(i+1)}</small></button>`).join('')}</div>`;
+  h+=`<div class="tl-row tl-plan"><span>แพลนแล้ว</span>${MN.map((n,i)=>`<span class="${selM===i+1?'tl-col':''}">${planned[i+1].map(p=>`<i title="${esc(p.n)} · ${esc(p.c)} ${p.y}">${esc(p.c)} ’${String(p.y).slice(2)}</i>`).join('')}</span>`).join('')}</div>`;
+  h+=l.map(x=>{const ms=x.months||[];return `<div class="tl-row tl-trip"><a href="${x.slug}/"><b>${esc(x.name.split(' · ')[0])}</b><small>${esc(x.days)} · ${fmtK(x.budgetMin)}</small></a>${MN.map((n,i)=>`<span class="tl-c${ms.includes(i+1)?' on':''}${selM===i+1?' tl-col':''}" title="${n}"></span>`).join('')}</div>`;}).join('');
+  el.innerHTML=h;
+  el.querySelectorAll('.tl-head button').forEach(b=>b.addEventListener('click',()=>{const m=+b.dataset.m;selM=(m===selM)?0:m;drawTL();}));}
+function drawSD(){
+  document.querySelectorAll('#sort button').forEach(b=>{const on=b.dataset.k===sk;b.classList.toggle('on',on);b.setAttribute('aria-pressed',on);const s=b.querySelector('span');if(s)s.textContent=on?(dir>0?'↑':'↓'):'';});
+  if(sk==='tl')return drawTL();
+  const el=document.getElementById('someday');el.className='grid';
+  const l=[...SD].sort(sk==='def'?(a,b)=>a._i-b._i:(a,b)=>(a[sk]-b[sk])*dir||a._i-b._i);
+  el.innerHTML=l.map(sdCard).join('');}
+document.querySelectorAll('#sort button').forEach(b=>b.addEventListener('click',()=>{const k=b.dataset.k;if(k===sk&&k!=='def'&&k!=='tl')dir=-dir;else{sk=k;dir=1}drawSD();}));
 drawSD();
 })();
 </script>
